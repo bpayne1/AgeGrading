@@ -1,0 +1,17 @@
+No. Name                  Age       Sex Time
+=== ===================== ========= === =====
+11  Adam Parks            29        m   22:52
+14  Bill Dickerson        64        m   23:14
+15  Byron Guy             61        m   23:19
+18  Jim Hess              64        m   23:31
+23  Jan Lewenczuk         52        f   24:37
+33  Bob Hardin            66        m   26:01
+38  Roger Ketron          66        m   26:56
+42  Tony Borghetti        71        m   28:07
+43  Gene Chumley          50        m   28:27
+46  Sam Culbertson        66        m   30:22
+47  Mary Rodriguez        54        f   30:24
+48  Joe Bainbridge        66        m   30:31
+55  Lance Treadway        39        m   32:54
+59  Cassandra Bainbridge  66        f   34:30
+60  Patti Turpin          56        f   35:11

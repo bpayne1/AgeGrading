@@ -1,0 +1,71 @@
+Place  Name                  Age  City                Sex   Time
+=====  ====================  ==   ==================  ====  =====
+68     Jim Currier           62   Ft Blackmore VA     M     76:14
+ 1     Matt Clabaugh         37   Kingsport TN        M     25:43
+ 2     Isaiah Dodson         17   Jefferson City TN   M     26:37
+ 3     Jimmy Dodson          44   Jefferson City TN   M     28:09
+ 4     Stephanie Topping     43   Kingsport TN        F     30:42
+ 5     Zach Johnson          14   Kingsport TN        M     31:18
+ 6     Shawn Becker          37   Duffield VA         M     31:33
+ 7     Jon Reynolds          56   Johnson City TN     M     31:46
+ 8     Dale Riddle           55   Pound VA            M     32:23
+ 9     Michelle McLellan     45   Elizabethton TN     F     32:28
+10     Jason Parton          34   Norton VA           M     32:51
+11     John Wright           46   Elizabethton TN     M     33:08
+12     Sarah Richardson      29   Kingsport TN        F     33:41
+13     Dan Richardson        59   Kingsport TN        M     33:48
+14     Bill Dickerson        65   Gray TN             M     33:48
+15     John Gewelke          11   Johnson City TN     M     34:01
+16     James Thompson        29   Johnson City TN     M     34:10
+17     Kelvin Kimbler        32   Kingsport TN        M     34:46
+18     Noah Schrayer         15   Bristol VA          M     35:29
+19     Sheri Nemeth          55   Elizabethton TN     F     35:39
+20     Earl Edens            57   Kingsport TN        M     35:50
+21     Rhonda Denham         46   Bristol TN          F     36:46
+22     Abraham Gewelke        9   Johnson City TN     M     37:50
+23     Sheri Gewelke         44   Johnson City TN     F     37:55
+24     Billy Mays            37   Norton VA           M     38:21
+25     Emma Studholme        22   Abingdon VA         F     38:35
+26     Rusty Huffman         53   Bristol TN          M     38:44
+27     John Kelly            32   Abingdon VA         M     38:53
+28     Casey Epperly         32   Jonesville VA       F     39:01
+29     Eddie Hood            43   Kingsport TN        M     39:05
+30     Denise Johnson        44   Kingsport TN        F     39:05
+31     Gary Rose             40   Clintwood VA        M     39:20
+32     Lee Roy Hurst         69   Midway TN           M     39:24
+33     Lily Gewelke           7   Johnson City TN     F     39:42
+34     Jim Schrayer          49   Bristol VA          M     39:44
+35     Andrew Shelton        35   Gate City VA        M     41:03
+36     Mike Allen            55   Big Stone Gap VA    M     41:20
+37     Morgan Jennings       33   Gate City VA        F     41:23
+38     Amanda Tipton         36   Kingsport TN        F     41:40
+39     Sara Roop             29   Big Stone Gap VA    F     41:53
+40     Lana Butler           67   Bluff City TN       F     42:00
+41     Sheri Hiter           29   Abingdon VA         F     42:09
+42     Dan Hoyle             49   Bristol VA          M     42:22
+43     Jamie Hunt            42   Kingsport TN        F     42:38
+44     John Hood             12   Kingsport TN        M     42:45
+45     Jack Starnes          70   Wise VA             M     42:58
+46     Janet Sexton          46   Blountville TN      F     43:02
+47     LeGrande Boyer        72   Kingsport TN        M     43:02
+48     Rebecca Maggard       44   Wise VA             F     45:25
+49     Amy Leighton          45   Kingsport TN        F     46:56
+50     Patti Turpin          57   Bristol VA          F     46:59
+51     Amy Fuller            36   Bristol VA          F     47:34
+52     Andi Crowley          46   Glade Spring VA     F     48:10
+53     Crystal Robinson      40   Kingsport TN        F     48:32
+54     Dawn Goins            49   Bristol VA          F     48:34
+55     Lisa Mullins          49   Church Hill TN      F     49:50
+56     Michael Gewelke       10   Johnson City TN     M     50:45
+57     April Overbay         41   Kingsport TN        F     51:07
+58     Crystal Bayless       29   Kingsport TN        F     53:10
+59     Amy Lemmons           39   Kingsport TN        F     53:10
+60     Angela Clendenon      36   Big Stone Gap VA    F     53:37
+61     Barbara Taylor        67   Johnson City TN     F     54:57
+62     Ruth Ketron           84   Kingsport TN        F     56:41
+63     Harriet Locke         81   Bristol TN          F     01:01:44
+64     Tara Smith            41   Big Stone Gap VA    F     01:01:57
+65     Neisha Smith          43   Coeburn VA          F     01:01:57
+66     Barbara Bogart        71   Elizabethton TN     F     01:05:56
+67     Sandra Vance          50   Johnson City TN     F     01:10:39
+68     Jim Currier           62   Ft Blackmore VA     M     01:16:14

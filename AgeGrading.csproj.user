@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Temp\AgeGrading\bin\x64\Debug\AgeGrading.exe</StartProgram>
+    <StartWorkingDirectory>C:\Temp\AgeGrading\bin\Debug\</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <StartProgram>C:\Users\bpayne.OSI\Documents\Visual Studio 2015\Projects\AgeGrading\bin\x64\Debug\AgeGrading.exe</StartProgram>
+    <StartWorkingDirectory>
+    </StartWorkingDirectory>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+</Project>

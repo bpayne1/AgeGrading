@@ -1,0 +1,56 @@
+Name                 Age City               Time      Sex
+==================== === ================   =======   ===
+Matt Clabaugh        39   Kingsport TN        25:42   M  
+Andy Shelton         37   Gate City VA        29:17   M  
+Shawn Becker         39   Duffield VA         30:50   M  
+Carl Andes           12   Johnson City TN     31:29   M  
+Hank Lane            14   Big Stone Gap VA    32:33   M  
+Jason Tipton         38   Kingsport TN        32:36   M  
+Jason Andes          41   Johnson City TN     32:54   M  
+Jim Hess             67   Bristol VA          34:17   M  
+Brandi Carter        27   Johnson City TN     34:37   F  
+Mike Reed            51   Gate City VA        35:58   M  
+Matthew Boothe       42   Saltville VA        36:24   M  
+Julianne Dodson      11   Jefferson City TN   36:29   F  
+Lee Williams         52   Unicoi TN           36:52   M  
+John Kelly           34   Abingdon VA         38:34   M  
+Eddie Hood           45   Kingsport TN        38:37   M  
+Kirk Roberts         41   Jonesborough TN     38:51   M  
+Liane Jennings       43   Johnson City TN     39:19   F  
+Bonnie Bradley       12   Blountville TN      40:13   F  
+Jack Starnes         72   Wise VA             40:34   M  
+Cora Bradley         10   Blountville TN      40:36   F  
+Chris Robinson       34   Kingsport TN        40:38   M  
+James Hibbs          47   Jonesville VA       40:40   M  
+Chris Lunsford       46   Jonesborough TN     40:56   M  
+Suzanne Boothe       46   Saltville VA        41:07   F  
+Emma Studholme       24   Abingdon VA         41:24   F  
+Daymon Byrd          51   Kingsport TN        41:31   M  
+Moe Brown            59   Chuckey TN          41:42   M  
+Ben Garland          28   Johnson City TN     42:10   M  
+Jose Aquino          52   Blountville TN      42:16   M  
+Tony Borghetti       74   Surgoinsville TN    42:31   M  
+Lily Dodson          13   Jefferson City TN   43:32   F  
+Linda McMurray       60   Mt Carmel TN        43:53   F  
+Cameron Tackett      16   Rose Hill VA        44:12   M  
+Todd Ives            49   Church Hill TN      44:18   M  
+Sheri Hiter          31   Abingdon VA         44:31   F  
+Mark Jennings        58   Johnson City TN     44:40   M  
+Lee Roy Hurst        71   Midway TN           45:31   M  
+Lana Butler          69   Bluff City TN       46:14   F  
+Shannon Ashley       46   Roan Mountain TN    46:37   F  
+Joe Davis            60   Kingsport TN        47:17   M  
+Patti Turpin         59   Bristol VA          47:48   F  
+Amy Leighton         47   Kingsport TN        48:33   F  
+Jody Willis          43   Jonesville VA       48:48   F  
+Charlie Hale         50   Bristol TN          48:49   M  
+Kathy Robinette      48   Roanoke VA          50:28   F  
+Beka Hibbs           10   Jonesville VA       50:57   F  
+Erick Brooks          7   Ewing VA            51:04   M  
+Olga Davis           58   Kingsport TN        52:26   F  
+Donna Bays           51   Kingsport TN        52:26   F  
+Danielle Tipton      34   Kingsport TN        52:27   F  
+Travis Tackett       36   Rose Hill VA        57:41   M  
+Barbara Taylor       69   Johnson City TN     57:51   F  
+Rebecca Tackett      36   Rose Hill VA        62:58   F  
+Barbara Bogart       73   Elizabethton TN     77:19   F  
