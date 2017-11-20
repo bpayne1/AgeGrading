@@ -327,7 +327,20 @@ namespace AgeGrading
             string[] split2 = name2.Split(mSeparator, StringSplitOptions.RemoveEmptyEntries);
             if (split2 == null) return true;
             if (split1.Length != split2.Length) return true;
-            List<int> distances = new List<int>();
+            string firstName1 = split1[0];
+            string firstName2 = split2[0];
+            string lastName1 = split1[split1.Length - 1];
+            string lastName2 = split2[split2.Length - 1];
+            if (0 == String.Compare(firstName1, firstName2, true))
+            {
+                if (lastName1.StartsWith(lastName2[0].ToString(), StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            if (0 == String.Compare(lastName1, lastName2, true))
+            {
+                if (firstName1.StartsWith(firstName2[0].ToString(), StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
             for (int ii = 0; ii < split1.Length; ii++)
             {
                 string separtedName1 = split1[ii];
@@ -335,7 +348,6 @@ namespace AgeGrading
                 int distance = LevenshteinDistance(separtedName1, separtedName2);
                 int allowedDistance = Math.Min(separtedName1.Length, separtedName2.Length);
                 if (distance >= allowedDistance) return false;
-                distances.Add(distance);
             }
             return true;
         }

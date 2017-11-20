@@ -1255,11 +1255,13 @@ namespace AgeGrading
 
         private string mLastDataTableFileName;
         private const string kXMLExtension = "xml";
+        private const string kXLSExtension = "xls";
         private const string kCSVExtension = "csv";
         protected const string kInitialDirectoryKey = "InitialDirectory";
         protected const string kLastOpenedDirectoryKey = "LastOpenedDirectoryKey";
         protected const string kLastRaceDirectoryKey = "LastRaceDirectoryKey";
         protected const string kXMLFileFilter = "XML files (*.xml)|*.xml";
+        protected const string kXLSFileFilter = "xls files (*.xls)|*.xls";
         protected const string kCSVFileFilter = "CSV files (*.csv)|*.csv";
         private string mLastDirectory;
         private string mLastOpenedDirectory;
@@ -1753,9 +1755,135 @@ namespace AgeGrading
             }
         }
 
+        private string GetCSVFile(string xlsPath)
+        {
+            if (String.IsNullOrWhiteSpace(xlsPath)) return String.Empty;
+            if (!File.Exists(xlsPath)) return String.Empty;
+            string csvPath = String.Empty;
+            Microsoft.Office.Interop.Excel.Application app = null;
+            Microsoft.Office.Interop.Excel.Workbook excelWorkbook = null;
+            try
+            {
+                app = new Microsoft.Office.Interop.Excel.Application();
+
+                // While saving, it asks for the user confirmation, whether we want to save or not.
+                // By setting DisplayAlerts to false, we just skip this alert.
+                app.DisplayAlerts = false;
+
+                // Now we open the upload file in Excel Workbook. 
+                excelWorkbook = app.Workbooks.Open(xlsPath);
+                string directory = Path.GetDirectoryName(xlsPath);
+                string fileName = Path.GetFileNameWithoutExtension(xlsPath);
+                string newFileName = Path.Combine(directory, $"{fileName}.{kCSVExtension}");
+                // Now save this file as CSV file.
+                excelWorkbook.SaveAs(newFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlCSV);
+                csvPath = newFileName;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (excelWorkbook != null)
+                {
+                    excelWorkbook.Close();
+                    excelWorkbook = null;
+                }
+                if (app != null)
+                {
+                    // Close the Workbook and Quit the Excel Application at the end. 
+                    app.Quit();
+                    app = null;
+                }
+            }
+            return csvPath;
+        }
+
+        private void ConvertExcelToXML()
+        {
+            OpenFileDialog dlg = null;
+            try
+            {
+                dlg = new OpenFileDialog();
+                dlg.AddExtension = false;
+                dlg.CheckFileExists = true;
+                dlg.CheckPathExists = true;
+                dlg.DefaultExt = kXLSExtension;
+                dlg.Filter = kXLSFileFilter;
+                string initialDirectory = GetLastOpenedDirectory();
+                if (!Directory.Exists(initialDirectory)) dlg.InitialDirectory = initialDirectory;
+                if (dlg.ShowDialog(this) == DialogResult.OK)
+                {
+                    string path = GetCSVFile(dlg.FileName);
+                    if (!String.IsNullOrWhiteSpace(path) && File.Exists(path))
+                    {
+                        string columnList = ",";
+                        List<string> columns = new List<string>();
+                        AgeGradeTextReader textReader = new AgeGradeTextReader();
+                        List<List<string>> rowColumns = textReader.GetDelimitedLines(path, 0, 1, columnList);
+                        columns = textReader.ColumnHeadings;
+                        if (rowColumns != null && rowColumns.Count > 0 && columns != null && columns.Count > 0)
+                        {
+                            string fileName = Path.GetFileName(path);
+                            using (DataTable dataTable = new DataTable(fileName))
+                            {
+                                int columnCount = 0;
+                                foreach (string column in columns)
+                                {
+                                    string temp = column.Trim();
+                                    if (String.IsNullOrEmpty(temp)) continue;
+                                    columnCount++;
+                                    AddDataColumn(dataTable, column, typeof(string));
+                                }
+
+                                for (int ii = 0; ii < rowColumns.Count; ii++)
+                                {
+                                    //if (rowColumns[ii].Count != dataTable.Columns.Count) throw new ArgumentException("The count of items in the row doesn't equal the column count");
+                                    try
+                                    {
+                                        DataRow dataRow = dataTable.NewRow();
+                                        int count = Math.Min(columnCount, rowColumns[ii].Count);
+                                        List<string> line = rowColumns[ii];
+                                        for (int jj = 0; jj < count; jj++)
+                                        {
+                                            string column = columns[jj];
+                                            string item = line[jj];
+                                            dataRow[column] = item;
+                                        }
+                                        dataTable.Rows.Add(dataRow);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Debug.WriteLine(ex.ToString());
+                                        Debug.Assert(false, ex.ToString());
+                                    }
+                                }
+                                string xmlFileName = path.Replace(kCSVExtension, kXMLExtension);
+                                dataTable.WriteXml(xmlFileName, XmlWriteMode.WriteSchema);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (dlg != null)
+                {
+                    dlg.Dispose();
+                    dlg = null;
+                }
+            }
+        }
+
         private void convertCSVToXMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConvertCSVToXML();
+            ConvertExcelToXML();
         }
 
         private void AddOrUpdateResults(DataTable dataTable)

@@ -6,9 +6,10 @@
     <StartWorkingDirectory>C:\Temp\AgeGrading\bin\Debug\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <StartProgram>C:\Users\bpayne.OSI\Documents\Visual Studio 2015\Projects\AgeGrading\bin\x64\Debug\AgeGrading.exe</StartProgram>
+    <StartProgram>
+    </StartProgram>
     <StartWorkingDirectory>
     </StartWorkingDirectory>
-    <StartAction>Program</StartAction>
+    <StartAction>Project</StartAction>
   </PropertyGroup>
 </Project>

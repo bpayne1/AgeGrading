@@ -563,7 +563,7 @@
             // 
             this.convertCSVToXMLToolStripMenuItem.Name = "convertCSVToXMLToolStripMenuItem";
             this.convertCSVToXMLToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.convertCSVToXMLToolStripMenuItem.Text = "&Convert CSV to XML";
+            this.convertCSVToXMLToolStripMenuItem.Text = "&Convert XLS to XML";
             this.convertCSVToXMLToolStripMenuItem.Click += new System.EventHandler(this.convertCSVToXMLToolStripMenuItem_Click);
             // 
             // addorUpdateResultsToolStripMenuItem
