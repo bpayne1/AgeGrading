@@ -2037,7 +2037,6 @@ namespace AgeGrading
         private void InitializeVolunteePoints()
         {
             if (mVolunteerPointsList != null) return;
-            const string kVolunteerPointsFileName = "VolunteerPoints2016.txt";
             const string kVolunteerPointsFileName = "VolunteerPoints" + AgeGradingForm.kYear + ".txt";
             string columnList = "\t";
             mVolunteerPointsList = new VolunteerPointsList();
