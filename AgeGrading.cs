@@ -39,11 +39,19 @@ namespace AgeGrading
             RaceInfo.BuildRaceInfo();
         }
 
-        const string kYear = "2017";
-        internal static string GetFolderPath()
+         public const string kYear = "2017";
+         private static int mYear;
+         public static int Year
+         {
+             get
+             {
+                 if (mYear > 0) return mYear;
+                 int.TryParse(kYear, out mYear);
+                 return mYear;
+             }
+         }
+internal static string GetFolderPath()
         {
-            DateTime now = DateTime.Now;
-            int year = now.Year;
             String skydrivePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), String.Format(@"SkyDrive\Documents\{0}", kYear));
             if (Directory.Exists(skydrivePath)) return skydrivePath;
             skydrivePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), String.Format(@"OneDrive\Documents\{0}", kYear));
@@ -606,6 +614,8 @@ namespace AgeGrading
         private string GetComboBoxSelection(ComboBox combo)
         {
             if (combo == null || combo.SelectedIndex < 0) return kUnknownComboItem;
+            RaceInfo race = combo.Items[combo.SelectedIndex] as RaceInfo;
+            if (race != null) return race.Name;
             string selection = combo.Items[combo.SelectedIndex].ToString();
             if (String.IsNullOrEmpty(selection)) selection = kUnknownComboItem;
             return selection;

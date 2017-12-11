@@ -852,7 +852,7 @@ namespace AgeGrading
                 HtmlTableRow row;
                 HtmlTableCell cell;
                 string lastestRace = String.Empty;
-                DateTime endOfYear = new DateTime(DateTime.Now.Year, 12, 31);
+                DateTime endOfYear = new DateTime(AgeGradingForm.Year, 12, 31);
                 foreach (DataRow item in mResultsTable.Rows)
                 {
                     if (item == null) continue;
@@ -2038,6 +2038,7 @@ namespace AgeGrading
         {
             if (mVolunteerPointsList != null) return;
             const string kVolunteerPointsFileName = "VolunteerPoints2016.txt";
+            const string kVolunteerPointsFileName = "VolunteerPoints" + AgeGradingForm.kYear + ".txt";
             string columnList = "\t";
             mVolunteerPointsList = new VolunteerPointsList();
             AgeGradeTextReader textReader = new AgeGradeTextReader();

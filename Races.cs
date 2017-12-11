@@ -99,9 +99,23 @@ namespace AgeGrading
             return String.Empty;
         }
 
+        public static string MissingFilePrefix
+        {
+            get { return "* "; }
+        }
+
+        private bool mFileExists;
+        public bool FileExists
+        {
+            get { return mFileExists; }
+            set { mFileExists = value; }
+        }
+
         public override string ToString()
         {
-            return this.Name;
+            string toString = (!this.FileExists ? RaceInfo.MissingFilePrefix : String.Empty);
+            toString += this.Name;
+            return toString;
         }
 
         private static List<RaceInfo> mRaces;
