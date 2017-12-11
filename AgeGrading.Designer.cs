@@ -95,6 +95,8 @@
             this.chkOnlyCompletingRequirements = new System.Windows.Forms.CheckBox();
             this.btnCombineFirstAndLastNames = new System.Windows.Forms.Button();
             this.btnAddSelectedRace = new System.Windows.Forms.Button();
+            this.btnSaveSelectedRace = new System.Windows.Forms.Button();
+            this.saveRawResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripRichText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStartingLineNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numColumnsLineNumber)).BeginInit();
@@ -114,7 +116,7 @@
             this.txtRaceResults.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRaceResults.Location = new System.Drawing.Point(13, 252);
             this.txtRaceResults.Name = "txtRaceResults";
-            this.txtRaceResults.Size = new System.Drawing.Size(763, 118);
+            this.txtRaceResults.Size = new System.Drawing.Size(907, 118);
             this.txtRaceResults.TabIndex = 0;
             this.txtRaceResults.Text = "";
             this.txtRaceResults.TextChanged += new System.EventHandler(this.txtRaceResults_TextChanged);
@@ -158,7 +160,7 @@
             this.btnProcessColumn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProcessColumn.AutoSize = true;
             this.btnProcessColumn.Enabled = false;
-            this.btnProcessColumn.Location = new System.Drawing.Point(562, 223);
+            this.btnProcessColumn.Location = new System.Drawing.Point(706, 223);
             this.btnProcessColumn.Name = "btnProcessColumn";
             this.btnProcessColumn.Size = new System.Drawing.Size(93, 23);
             this.btnProcessColumn.TabIndex = 1;
@@ -201,7 +203,7 @@
             this.cmbAge.FormattingEnabled = true;
             this.cmbAge.Location = new System.Drawing.Point(132, 37);
             this.cmbAge.Name = "cmbAge";
-            this.cmbAge.Size = new System.Drawing.Size(387, 21);
+            this.cmbAge.Size = new System.Drawing.Size(531, 21);
             this.cmbAge.TabIndex = 5;
             this.cmbAge.SelectedIndexChanged += new System.EventHandler(this.cmbAge_SelectedIndexChanged);
             // 
@@ -213,7 +215,7 @@
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Location = new System.Drawing.Point(132, 64);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(387, 21);
+            this.cmbGender.Size = new System.Drawing.Size(531, 21);
             this.cmbGender.TabIndex = 6;
             this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
@@ -225,7 +227,7 @@
             this.cmbTime.FormattingEnabled = true;
             this.cmbTime.Location = new System.Drawing.Point(132, 91);
             this.cmbTime.Name = "cmbTime";
-            this.cmbTime.Size = new System.Drawing.Size(387, 21);
+            this.cmbTime.Size = new System.Drawing.Size(531, 21);
             this.cmbTime.TabIndex = 7;
             this.cmbTime.SelectedIndexChanged += new System.EventHandler(this.cmbTime_SelectedIndexChanged);
             // 
@@ -237,7 +239,7 @@
             this.cmbName.FormattingEnabled = true;
             this.cmbName.Location = new System.Drawing.Point(132, 118);
             this.cmbName.Name = "cmbName";
-            this.cmbName.Size = new System.Drawing.Size(387, 21);
+            this.cmbName.Size = new System.Drawing.Size(531, 21);
             this.cmbName.TabIndex = 8;
             this.cmbName.SelectedIndexChanged += new System.EventHandler(this.cmbName_SelectedIndexChanged);
             // 
@@ -292,7 +294,7 @@
             this.cmbRaceTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRaceTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRaceTypes.FormattingEnabled = true;
-            this.cmbRaceTypes.Location = new System.Drawing.Point(630, 27);
+            this.cmbRaceTypes.Location = new System.Drawing.Point(774, 27);
             this.cmbRaceTypes.Name = "cmbRaceTypes";
             this.cmbRaceTypes.Size = new System.Drawing.Size(146, 21);
             this.cmbRaceTypes.TabIndex = 15;
@@ -302,7 +304,7 @@
             // 
             this.labelDistance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDistance.AutoSize = true;
-            this.labelDistance.Location = new System.Drawing.Point(548, 31);
+            this.labelDistance.Location = new System.Drawing.Point(692, 31);
             this.labelDistance.Name = "labelDistance";
             this.labelDistance.Size = new System.Drawing.Size(63, 13);
             this.labelDistance.TabIndex = 16;
@@ -313,7 +315,7 @@
             this.btnCalculateAgeGrade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCalculateAgeGrade.AutoSize = true;
             this.btnCalculateAgeGrade.Enabled = false;
-            this.btnCalculateAgeGrade.Location = new System.Drawing.Point(661, 223);
+            this.btnCalculateAgeGrade.Location = new System.Drawing.Point(805, 223);
             this.btnCalculateAgeGrade.Name = "btnCalculateAgeGrade";
             this.btnCalculateAgeGrade.Size = new System.Drawing.Size(115, 23);
             this.btnCalculateAgeGrade.TabIndex = 17;
@@ -336,7 +338,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView.Size = new System.Drawing.Size(763, 99);
+            this.dataGridView.Size = new System.Drawing.Size(907, 99);
             this.dataGridView.TabIndex = 18;
             this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             this.dataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView_DataBindingComplete);
@@ -354,9 +356,10 @@
             this.toolStripMenuItemFind,
             this.toolStripMenuItemFindNext,
             this.toolStripMenuItemSelectColumn,
-            this.copyToolStripMenuItem});
+            this.copyToolStripMenuItem,
+            this.saveRawResultsToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(174, 208);
+            this.contextMenuStrip.Size = new System.Drawing.Size(174, 252);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             // 
             // toolStripMenuItemOpen
@@ -455,7 +458,7 @@
             this.groupBox.Controls.Add(this.radioFreeForm);
             this.groupBox.Controls.Add(this.radioUseTabSeparatedColumns);
             this.groupBox.Controls.Add(this.radioFixedWidthColumns);
-            this.groupBox.Location = new System.Drawing.Point(551, 83);
+            this.groupBox.Location = new System.Drawing.Point(695, 83);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(225, 103);
             this.groupBox.TabIndex = 21;
@@ -507,7 +510,7 @@
             this.editToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(788, 24);
+            this.menuStrip.Size = new System.Drawing.Size(932, 24);
             this.menuStrip.TabIndex = 22;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -615,7 +618,7 @@
             // 
             this.labelKQRace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelKQRace.AutoSize = true;
-            this.labelKQRace.Location = new System.Drawing.Point(548, 58);
+            this.labelKQRace.Location = new System.Drawing.Point(692, 58);
             this.labelKQRace.Name = "labelKQRace";
             this.labelKQRace.Size = new System.Drawing.Size(60, 13);
             this.labelKQRace.TabIndex = 24;
@@ -626,7 +629,7 @@
             this.cmbKQRace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbKQRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKQRace.FormattingEnabled = true;
-            this.cmbKQRace.Location = new System.Drawing.Point(630, 54);
+            this.cmbKQRace.Location = new System.Drawing.Point(774, 54);
             this.cmbKQRace.Name = "cmbKQRace";
             this.cmbKQRace.Size = new System.Drawing.Size(146, 21);
             this.cmbKQRace.TabIndex = 23;
@@ -649,14 +652,14 @@
             this.cmbFirstName.FormattingEnabled = true;
             this.cmbFirstName.Location = new System.Drawing.Point(132, 145);
             this.cmbFirstName.Name = "cmbFirstName";
-            this.cmbFirstName.Size = new System.Drawing.Size(387, 21);
+            this.cmbFirstName.Size = new System.Drawing.Size(531, 21);
             this.cmbFirstName.TabIndex = 25;
             this.cmbFirstName.SelectedIndexChanged += new System.EventHandler(this.cmbFirstName_SelectedIndexChanged);
             // 
             // numAgeGroup
             // 
             this.numAgeGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numAgeGroup.Location = new System.Drawing.Point(600, 194);
+            this.numAgeGroup.Location = new System.Drawing.Point(744, 194);
             this.numAgeGroup.Minimum = new decimal(new int[] {
             14,
             0,
@@ -676,7 +679,7 @@
             // 
             this.labelFirstAgeGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFirstAgeGroup.AutoSize = true;
-            this.labelFirstAgeGroup.Location = new System.Drawing.Point(516, 198);
+            this.labelFirstAgeGroup.Location = new System.Drawing.Point(660, 198);
             this.labelFirstAgeGroup.Name = "labelFirstAgeGroup";
             this.labelFirstAgeGroup.Size = new System.Drawing.Size(78, 13);
             this.labelFirstAgeGroup.TabIndex = 28;
@@ -686,7 +689,7 @@
             // 
             this.btnNextAgeGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNextAgeGroup.AutoSize = true;
-            this.btnNextAgeGroup.Location = new System.Drawing.Point(700, 193);
+            this.btnNextAgeGroup.Location = new System.Drawing.Point(844, 193);
             this.btnNextAgeGroup.Name = "btnNextAgeGroup";
             this.btnNextAgeGroup.Size = new System.Drawing.Size(75, 23);
             this.btnNextAgeGroup.TabIndex = 29;
@@ -699,7 +702,7 @@
             this.btnCompareMissingMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompareMissingMembers.AutoSize = true;
             this.btnCompareMissingMembers.Enabled = false;
-            this.btnCompareMissingMembers.Location = new System.Drawing.Point(413, 223);
+            this.btnCompareMissingMembers.Location = new System.Drawing.Point(557, 223);
             this.btnCompareMissingMembers.Name = "btnCompareMissingMembers";
             this.btnCompareMissingMembers.Size = new System.Drawing.Size(143, 23);
             this.btnCompareMissingMembers.TabIndex = 30;
@@ -712,7 +715,7 @@
             this.btnMemberAges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMemberAges.AutoSize = true;
             this.btnMemberAges.Enabled = false;
-            this.btnMemberAges.Location = new System.Drawing.Point(305, 223);
+            this.btnMemberAges.Location = new System.Drawing.Point(449, 223);
             this.btnMemberAges.Name = "btnMemberAges";
             this.btnMemberAges.Size = new System.Drawing.Size(102, 23);
             this.btnMemberAges.TabIndex = 31;
@@ -736,7 +739,7 @@
             this.btnCombineFirstAndLastNames.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCombineFirstAndLastNames.AutoSize = true;
             this.btnCombineFirstAndLastNames.Enabled = false;
-            this.btnCombineFirstAndLastNames.Location = new System.Drawing.Point(197, 223);
+            this.btnCombineFirstAndLastNames.Location = new System.Drawing.Point(341, 223);
             this.btnCombineFirstAndLastNames.Name = "btnCombineFirstAndLastNames";
             this.btnCombineFirstAndLastNames.Size = new System.Drawing.Size(102, 23);
             this.btnCombineFirstAndLastNames.TabIndex = 33;
@@ -748,7 +751,7 @@
             // 
             this.btnAddSelectedRace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddSelectedRace.AutoSize = true;
-            this.btnAddSelectedRace.Location = new System.Drawing.Point(74, 223);
+            this.btnAddSelectedRace.Location = new System.Drawing.Point(218, 223);
             this.btnAddSelectedRace.Name = "btnAddSelectedRace";
             this.btnAddSelectedRace.Size = new System.Drawing.Size(117, 23);
             this.btnAddSelectedRace.TabIndex = 34;
@@ -756,12 +759,32 @@
             this.btnAddSelectedRace.UseVisualStyleBackColor = true;
             this.btnAddSelectedRace.Click += new System.EventHandler(this.btnAddSelectedRace_Click);
             // 
+            // btnSaveSelectedRace
+            // 
+            this.btnSaveSelectedRace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveSelectedRace.AutoSize = true;
+            this.btnSaveSelectedRace.Location = new System.Drawing.Point(95, 223);
+            this.btnSaveSelectedRace.Name = "btnSaveSelectedRace";
+            this.btnSaveSelectedRace.Size = new System.Drawing.Size(117, 23);
+            this.btnSaveSelectedRace.TabIndex = 35;
+            this.btnSaveSelectedRace.Text = "Sa&ve Selected Race";
+            this.btnSaveSelectedRace.UseVisualStyleBackColor = true;
+            this.btnSaveSelectedRace.Click += new System.EventHandler(this.btnSaveSelectedRace_Click);
+            // 
+            // saveRawResultsToolStripMenuItem
+            // 
+            this.saveRawResultsToolStripMenuItem.Name = "saveRawResultsToolStripMenuItem";
+            this.saveRawResultsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.saveRawResultsToolStripMenuItem.Text = "Save Ra&w Results";
+            this.saveRawResultsToolStripMenuItem.Click += new System.EventHandler(this.saveRawResultsToolStripMenuItem_Click);
+            // 
             // AgeGradingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 503);
+            this.ClientSize = new System.Drawing.Size(932, 503);
             this.ContextMenuStrip = this.contextMenuStrip;
+            this.Controls.Add(this.btnSaveSelectedRace);
             this.Controls.Add(this.btnAddSelectedRace);
             this.Controls.Add(this.btnCombineFirstAndLastNames);
             this.Controls.Add(this.chkOnlyCompletingRequirements);
@@ -797,7 +820,7 @@
             this.Controls.Add(this.btnProcessColumn);
             this.Controls.Add(this.txtRaceResults);
             this.MainMenuStrip = this.menuStrip;
-            this.MinimumSize = new System.Drawing.Size(678, 541);
+            this.MinimumSize = new System.Drawing.Size(948, 541);
             this.Name = "AgeGradingForm";
             this.Text = "Age Grading";
             this.contextMenuStripRichText.ResumeLayout(false);
@@ -883,6 +906,8 @@
         private System.Windows.Forms.CheckBox chkOnlyCompletingRequirements;
         private System.Windows.Forms.Button btnCombineFirstAndLastNames;
         private System.Windows.Forms.Button btnAddSelectedRace;
+        private System.Windows.Forms.Button btnSaveSelectedRace;
+        private System.Windows.Forms.ToolStripMenuItem saveRawResultsToolStripMenuItem;
     }
 }
 

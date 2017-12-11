@@ -104,7 +104,8 @@ namespace AgeGrading
             dataGridView.DataSource = this.AgeGradedResults;
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
-                if (column.Name.Equals(NameColumnName) || column.Name.Equals(AgeColumnName)) continue;
+                if (0 == String.Compare(column.Name, NameColumnName, true)
+                    || 0 == String.Compare(column.Name, AgeColumnName, true)) continue;
                 column.Visible = false;
             }
             RestartAgeGroup = true;

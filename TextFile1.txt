@@ -1,56 +1,487 @@
-Name                 Age City               Time      Sex
-==================== === ================   =======   ===
-Matt Clabaugh        39   Kingsport TN        25:42   M  
-Andy Shelton         37   Gate City VA        29:17   M  
-Shawn Becker         39   Duffield VA         30:50   M  
-Carl Andes           12   Johnson City TN     31:29   M  
-Hank Lane            14   Big Stone Gap VA    32:33   M  
-Jason Tipton         38   Kingsport TN        32:36   M  
-Jason Andes          41   Johnson City TN     32:54   M  
-Jim Hess             67   Bristol VA          34:17   M  
-Brandi Carter        27   Johnson City TN     34:37   F  
-Mike Reed            51   Gate City VA        35:58   M  
-Matthew Boothe       42   Saltville VA        36:24   M  
-Julianne Dodson      11   Jefferson City TN   36:29   F  
-Lee Williams         52   Unicoi TN           36:52   M  
-John Kelly           34   Abingdon VA         38:34   M  
-Eddie Hood           45   Kingsport TN        38:37   M  
-Kirk Roberts         41   Jonesborough TN     38:51   M  
-Liane Jennings       43   Johnson City TN     39:19   F  
-Bonnie Bradley       12   Blountville TN      40:13   F  
-Jack Starnes         72   Wise VA             40:34   M  
-Cora Bradley         10   Blountville TN      40:36   F  
-Chris Robinson       34   Kingsport TN        40:38   M  
-James Hibbs          47   Jonesville VA       40:40   M  
-Chris Lunsford       46   Jonesborough TN     40:56   M  
-Suzanne Boothe       46   Saltville VA        41:07   F  
-Emma Studholme       24   Abingdon VA         41:24   F  
-Daymon Byrd          51   Kingsport TN        41:31   M  
-Moe Brown            59   Chuckey TN          41:42   M  
-Ben Garland          28   Johnson City TN     42:10   M  
-Jose Aquino          52   Blountville TN      42:16   M  
-Tony Borghetti       74   Surgoinsville TN    42:31   M  
-Lily Dodson          13   Jefferson City TN   43:32   F  
-Linda McMurray       60   Mt Carmel TN        43:53   F  
-Cameron Tackett      16   Rose Hill VA        44:12   M  
-Todd Ives            49   Church Hill TN      44:18   M  
-Sheri Hiter          31   Abingdon VA         44:31   F  
-Mark Jennings        58   Johnson City TN     44:40   M  
-Lee Roy Hurst        71   Midway TN           45:31   M  
-Lana Butler          69   Bluff City TN       46:14   F  
-Shannon Ashley       46   Roan Mountain TN    46:37   F  
-Joe Davis            60   Kingsport TN        47:17   M  
-Patti Turpin         59   Bristol VA          47:48   F  
-Amy Leighton         47   Kingsport TN        48:33   F  
-Jody Willis          43   Jonesville VA       48:48   F  
-Charlie Hale         50   Bristol TN          48:49   M  
-Kathy Robinette      48   Roanoke VA          50:28   F  
-Beka Hibbs           10   Jonesville VA       50:57   F  
-Erick Brooks          7   Ewing VA            51:04   M  
-Olga Davis           58   Kingsport TN        52:26   F  
-Donna Bays           51   Kingsport TN        52:26   F  
-Danielle Tipton      34   Kingsport TN        52:27   F  
-Travis Tackett       36   Rose Hill VA        57:41   M  
-Barbara Taylor       69   Johnson City TN     57:51   F  
-Rebecca Tackett      36   Rose Hill VA        62:58   F  
-Barbara Bogart       73   Elizabethton TN     77:19   F  
+Name                         Sex      AGE TIME
+========    =========        ======   === =======
+Tanner      Cook              M       23  1:10:47
+Austin      Whitelaw          M       24  1:14:31
+Stephanie   Place             F       30  1:22:47
+Meghan      Breadmore         F       24  1:26:00
+Phil        Roberts           M       54  1:26:09
+David       Harker            M       41  1:27:19
+shawn       hall              M       35  1:29:01
+Steven      Hensley           M       24  1:29:31
+Andrew      Campbell          M       23  1:30:12
+Bryson      Livesay           M       14  1:31:10
+David       Scott             M       37  1:32:37
+Michael     Greenlee          M       34  1:32:45
+andee       swann             F       40  1:34:10
+Jeff        King              M       50  1:35:23
+WILL        EVERTT            M       14  1:35:58
+Daniel      Collie            M       24  1:36:01
+Matthew     Bible             M       28  1:36:01
+Ike         Anderson          M       29  1:37:20
+jerrick     juarez            M       14  1:38:17
+Darin       Trent             M       28  1:40:26
+Aaron       Brooks            M       47  1:40:50
+Randall     Statzer           M       43  1:41:08
+Roman       Zehner            M       55  1:41:55
+Marcus      McDavid           M       27  1:42:27
+beth        stevenson         F       36  1:43:04
+bentley     honkins           M       33  1:43:05
+Stephen     Blair             M       43  1:43:13
+Elizabeth   Soto              F       25  1:43:25
+Camero      Cooper            M       26  1:43:30
+William     Greening          M       27  1:43:57
+Dante       Van Wyhe          M       19  1:43:59
+Robert      Nielsen           M       49  1:44:40
+Amy         Bradley           F       43  1:46:25
+Daniel      Montgomery        M       35  1:46:25
+Mike        Harding           M       51  1:46:37
+Jake        Tittle            M       33  1:46:56
+Jennifer    Norris            F       34  1:47:12
+Doug        Strickland        M       56  1:47:29
+David       Gibson            M       43  1:47:58
+Warren      Lewis             M       36  1:48:39
+Chad        Green             M       45  1:49:24
+Emil        Schenck           M       37  1:49:29
+Will        Earhart           M       38  1:49:30
+Stephen     Fisher            M       43  1:49:39
+Keith       Davis             M       37  1:49:43
+Devon       Forgety           M       24  1:49:46
+Eddie       Harkleroad        M       58  1:49:51
+Ryan        Youngblood        M       43  1:49:52
+JOSH        CANNON            M       39  1:50:08
+Holly       Hicks             F       42  1:50:10
+Jason       Suhy              M       36  1:50:12
+Tom         Champagne         M       56  1:50:19
+Cole        Thomas            M       14  1:50:25
+Kevin       Price             M       53  1:50:29
+Brandi      Napier            F       28  1:50:41
+Sarah       Anderson          F       41  1:50:42
+Sarah       Smith Carlson     F       30  1:50:46
+zac         deel              M       24  1:50:49
+Sherry      Stoneman          F       42  1:50:55
+BRENDA      HITCH             F       54  1:51:03
+ED          EVERTT            M       47  1:51:04
+Daniel      Dunbar            M       38  1:51:14
+Brian       Johnson           M       49  1:51:26
+Darrell     Collins           M       56  1:51:28
+Clint       Robinette         M       37  1:51:36
+Shawn       Cutshall          M       45  1:52:20
+Bethany     Glenn             F       29  1:52:35
+Michael     Hamrick           M       35  1:52:39
+josh        johnson           M       30  1:53:13
+Allen       Coates            M       49  1:53:25
+leslie      montgomery        M       46  1:53:33
+JOHN        BEAVER            M       39  1:53:40
+Christopher Frazee            M       25  1:53:53
+Clyde       Kidd              M       64  1:53:59
+Blake       Williams          M       53  1:54:12
+Kim         Cuddy             F       42  1:54:46
+John        Hensley           M       42  1:55:26
+Haylea      Seals             F       21  1:55:29
+Martin      Tran              M       45  1:55:32
+Gretchen    Dietrich          F       41  1:55:44
+Jamie       Mains Milhorn     F       35  1:55:49
+Robert      Rice              M       46  1:56:00
+Amber       Davis             F       28  1:56:07
+Littman     Bustamante        M       43  1:56:08
+mark        roberts           M       44  1:56:28
+STEPHEN     WOOTEN            M       33  1:56:38
+Brandy      Bradley           F       33  1:56:42
+Kelly       Chandler          M       44  1:56:42
+Evan        Ferrell           M       19  1:57:04
+Holden      Young             M       19  1:57:07
+Samantha    Cahill            F       19  1:57:10
+Tommye      Horton            F       40  1:57:10
+Theresa     Cahill            F       19  1:57:12
+Cheryl      Smith             F       47  1:57:27
+Nathan      Fowler            M       34  1:57:29
+Mark        Rollins           M       50  1:57:41
+Tess        Dykstra           F       22  1:57:48
+Christopher Hanor             M       31  1:57:55
+Brady       Dove              M       15  1:58:08
+Ingrid      Luffman           F       48  1:58:35
+Stoney      HaleII            M       38  1:58:36
+ELAINE      ERVIN             F       26  1:58:51
+Matt        George            M       26  1:59:09
+Susan       Greineder         F       43  1:59:21
+Edward      Harris            M       40  1:59:27
+Lindsey     Golden            F       30  1:59:35
+Ed          Ginty             M       48  1:59:51
+Candace     DelMastro         F       32  2:00:25
+Morgan      Isom              F       25  2:00:34
+Kayla       Salva             F       28  2:00:43
+Stan        Stratton          M       50  2:00:54
+Mark        Nipper            M       63  2:00:59
+Peyton      Lawson            M       22  2:00:59
+Ben         Burklund          M       36  2:01:05
+Sarah       Bailey            F       35  2:01:05
+Page        Mayo              F       47  2:01:10
+Julie       Scott             F       36  2:01:16
+Nena        Cooper            F       58  2:01:16
+Bryan       Sambat            M       41  2:01:24
+Don         Keen              M       36  2:01:25
+Barbara     Blaser            F       48  2:01:35
+lake        montgomery        M       27  2:02:01
+Leah        Rodgers           F       45  2:02:15
+John        Counts            M       45  2:02:19
+Scott       Hodge             M       44  2:02:19
+Shane       Vaughn            M       44  2:02:42
+Jon         Hammonds          M       43  2:02:50
+Todd        Weaver            M       37  2:03:05
+Israel      Garcia            M       49  2:03:11
+Hope        Ross              F       39  2:03:13
+Chris       Harr              M       24  2:03:21
+Gordon      Garber            M       53  2:03:27
+Barry       Hurst             M       49  2:03:31
+Jim         Schrayer          M       52  2:03:44
+Jennifer    Coats             F       24  2:03:48
+Daniel      Cantrell          M       21  2:03:53
+Benson      Redman            M       28  2:04:11
+Matthew     Boothe            M       43  2:04:32
+Heather     Crothers          F       26  2:04:35
+Laura       Nunley            F       31  2:04:44
+John        Rock              M       57  2:04:48
+Mike        Averill           M       46  2:04:49
+Tasha       Adams             F       22  2:04:52
+Erin        Hankins           F       33  2:05:01
+Mark        Valk              M       44  2:05:08
+Big Daddy   Hanson            M       34  2:05:18
+Travis      Hager             M       44  2:05:20
+Todd        Helton            M       38  2:05:39
+Chad        Napier            M       40  2:05:40
+Keith       loyd              M       55  2:05:40
+Sarah       Scruggs           F       18  2:05:46
+Rusty       Huffman           M       61  2:05:50
+Lucas       Kuivinen          M       19  2:05:51
+Larry       Reece             M       66  2:06:01
+Victor      Smith             M       27  2:06:19
+Cristian    Quizhpi           M       32  2:06:19
+Eric        Richardson        M       36  2:06:50
+Andrea      Deconinck         F       20  2:06:56
+Lesa        Haynes            F       55  2:06:58
+Samantha    Edmonds           F       28  2:07:00
+Kristen     Snider            F       25  2:07:08
+Janine      Myatt             F       50  2:07:22
+Lance       Ison              M       47  2:07:28
+TONI        MEDVETZ           F       54  2:07:28
+Robert      Hendricks         M       53  2:07:46
+Rick        Eldreth           M       57  2:07:51
+Lee         Williams          M       54  2:07:55
+William     Branch            M       38  2:08:08
+Sherrika    Mauldin           F       28  2:08:12
+Nicole      Fields            F       35  2:08:25
+Sherry      Barrett           F       52  2:08:45
+Kelli       Orr               F       32  2:08:47
+Ryan        Wilkins           M       43  2:09:00
+Jennifer    Bullington        F       45  2:09:10
+Tim         Hensley           M       38  2:09:24
+Richard     Tyner             M       63  2:09:26
+Mike        Pearce            M       47  2:09:30
+Lindsey     Osborne           F       22  2:09:36
+Jamie       Brown             F       37  2:09:37
+Tucker      Carter            M       47  2:09:39
+Josh        Wandell           M       39  2:09:50
+Jeff        Vance             M       38  2:09:51
+justin      wandell           M       23  2:09:52
+TJ          Brown             M       54  2:09:52
+Blaine      Beining           M       36  2:09:53
+Haley       Morehead          F       25  2:10:09
+Debbie      Starnes           F       55  2:10:46
+Josh        Denton            M       25  2:10:53
+Robert      Hardin            M       71  2:10:59
+Scott       Jenkins           M       29  2:11:39
+Erika       Newsom            F       35  2:11:46
+Shelia      Crockett          F       43  2:12:02
+Michael     Singer            M       48  2:12:22
+Sharon      Bumgardner        F       59  2:12:24
+Alex        Rush              M       15  2:12:32
+Kristin     Powell            F       31  2:12:40
+Doug        Myers             M       64  2:12:52
+Monette     Fortuin           F       30  2:12:57
+JILL        BICKFORD          F       42  2:12:58
+Kyle        Morgan            M       30  2:13:03
+Erin        Brown             F       42  2:13:11
+Kelly       Jordan            F       35  2:13:20
+Jim         Buckley           M       61  2:14:02
+Page        McClanahan        F       46  2:14:12
+Jessica     Cadwallader       F       26  2:14:16
+Cristy      Pruitt            F       39  2:14:17
+Laura       Rollins           F       47  2:14:24
+greg        adams             M       39  2:14:35
+Kevin       Hensley           M       41  2:14:44
+Brent       Young             M       48  2:14:46
+Ryan        Kerrins           M       28  2:14:50
+Ashley      Payne             F       29  2:15:19
+Melina      Christian         F       38  2:15:25
+george      triplett          M       65  2:15:41
+Lauren      George            F       26  2:15:41
+Steven      Cook              M       51  2:16:00
+Brad        Cowden            M       45  2:16:03
+Sarah       Wexler            F       32  2:16:04
+Kingsley    Rutters           M       45  2:16:18
+Sarah       Powell            F       39  2:16:22
+Tommy       Coppenger         M       44  2:16:22
+Randall     Gilmore           M       54  2:16:23
+Robert      Tabor             M       35  2:16:28
+Samantha    Ferrell           F       16  2:16:33
+Kim         Lawson            F       40  2:16:41
+David       Williams          M       53  2:16:49
+Marvin      Archer            M       58  2:16:57
+Susan       Rogers            F       61  2:17:00
+Nathan      Murray            M       40  2:17:04
+Jason       Copenhaver        M       35  2:17:14
+Mike        Hubbard           M       55  2:17:26
+summer      brickey           F       28  2:17:29
+Brooke      Colman            F       26  2:17:46
+Rachel      Higgins           F       28  2:17:48
+Abby        Gilbert           F       36  2:17:49
+Jamie       Capaldo           F       38  2:17:53
+Hayley      Greer             F       31  2:18:00
+Ryan        Baskette          M       25  2:18:05
+Christy     Whitehead         F       31  2:18:06
+Jennifer    Hall              F       26  2:18:28
+Tiffany     Long              F       41  2:18:31
+Marcia      Sentell           F       61  2:18:41
+Layla       Marshall          F       26  2:18:47
+Brittany    Wartman           F       29  2:18:51
+Marie       Tedesco           F       69  2:19:00
+Cody        Storm             M       42  2:19:02
+ANGIE       EVERETT           F       47  2:19:04
+Amber       Foster            F       38  2:19:06
+Heather     Gore              F       35  2:19:12
+Lee Roy     Hurst             M       72  2:19:17
+Frank       Maynard           M       59  2:19:18
+Tracy       Bertrand          F       37  2:19:19
+Francis     Colvais           M       49  2:19:26
+heather     levesque          F       35  2:19:29
+Linda       Rhodes            F       59  2:19:30
+Wendy       Chartier          F       42  2:19:55
+Lenny       Chartier          M       49  2:19:56
+Gretchen    Tongco            F       49  2:20:00
+Caroline    Crenshaw          F       25  2:20:00
+Emily       Franklin          F       31  2:20:00
+Patricia    Allen             F       66  2:20:06
+John        Wright            M       49  2:20:13
+Jennifer    Henley            F       64  2:20:24
+Beth Anne   Collins           F       26  2:20:28
+Tony        Stiltner          M       47  2:20:35
+tim         head              M       51  2:20:41
+Robert      English           M       53  2:20:43
+Holly       English           F       26  2:20:44
+Scott       Schallon          M       48  2:21:01
+Laura       McKinney          F       40  2:21:10
+Jessica     VanEaton          F       36  2:21:10
+eric        gaviria           M       15  2:21:12
+Trevor      Drozdowski        M       49  2:21:12
+Rebecca     Maggard           F       48  2:21:33
+Patti       Turpin            F       60  2:21:35
+Samantha    Keen              F       32  2:21:46
+Laura       Evans             F       48  2:21:54
+Bree        Gibson            F       22  2:22:07
+James       Peters            M       33  2:22:08
+Sharon      VanDyke           F       68  2:22:15
+Megan       Shoaf             F       22  2:22:28
+Dustin      Anderson          M       34  2:22:43
+Arlona      Boggs             F       40  2:22:43
+Matthew     Case              M       39  2:22:46
+Hayden      Armstrong         M       15  2:22:54
+Sara        Harmon            F       35  2:23:04
+Alexa       Mullins           F       29  2:23:14
+Crista      Austin            F       44  2:23:23
+Jordan      Blevins           M       33  2:23:24
+Jared       Lester            M       38  2:23:25
+Teresa      Duffy             F       49  2:23:33
+Glenn       Hudson            M       54  2:23:43
+Christina   Crider Smith      F       39  2:23:43
+William     Prusha            M       55  2:24:02
+Michelle    Wilson            F       43  2:24:11
+Lori        Whitson           F       52  2:24:42
+Leslie      Baker             F       40  2:24:49
+Ryan        Overbey           M       30  2:24:50
+Martin      Barrett           M       63  2:24:52
+Karen       Whited Barnette   F       47  2:25:00
+Kieran      Smith             M       47  2:25:11
+Reece       Robertson         F       35  2:25:14
+Katie       Gallagher         F       30  2:25:15
+Benita      Auge              F       69  2:25:16
+sarah       haun              F       30  2:25:23
+Caroline    Reed              F       57  2:25:27
+Wayne       Kinder            M       51  2:25:44
+Kristen     Blair             F       33  2:26:26
+Heather     Varner            F       35  2:27:06
+Travis      Barker            M       21  2:27:17
+Janice      Hendricks         F       52  2:27:19
+Mary        Rodriguez         F       58  2:27:27
+Rob         Cantor            M       48  2:27:42
+Tammy       Payne             F       56  2:28:32
+Joe         Davis             M       62  2:28:51
+Daymon      Byrd              M       53  2:28:51
+Alamzeb     yousafzai         M       27  2:28:52
+Jessicaa    Stamey            F       27  2:29:26
+Ashly       Graham            F       30  2:29:28
+Nora        Barton            F       36  2:29:31
+Suzanne     Boothe            F       48  2:29:37
+Mark        Serago            M       60  2:29:53
+Kathleen    McGuire           F       23  2:30:00
+Allison     Razo              F       26  2:30:02
+Christie    Bass              F       37  2:30:03
+Angela      McDaniel          F       40  2:30:40
+Melony      Ison              F       41  2:30:46
+Michael     Lovelace          M       61  2:30:48
+Tiffany     Wilson            F       40  2:30:54
+Linda       Mcmurray          F       61  2:30:56
+Olga        Davis             F       59  2:31:11
+Teresa      Darnell           F       52  2:31:23
+Tim         Story             M       44  2:31:35
+Rachel      Davis             F       33  2:31:35
+Vanessa     Cahill            F       34  2:31:46
+Landry      Russell           F       13  2:32:30
+Mark        Jennings          M       59  2:32:46
+Allen       Eldridge          M       32  2:32:48
+Katrina     Smith             F       33  2:32:52
+Richard     O'Hamill          M       37  2:33:20
+JERRY       ROBINSON          M       48  2:33:29
+Stacie      Babecka           F       34  2:33:30
+Raymond     Bowers            M       56  2:33:32
+Brandon     Koski             M       30  2:33:32
+Paula       Nichols           F       41  2:33:59
+Tanna       Hagy              F       29  2:34:01
+Jeffrey     Cruz              M       38  2:34:06
+Brittney    Dickenson         F       28  2:34:11
+Chad        Shelton           M       48  2:34:12
+Brittany    Rider             F       27  2:34:21
+Lisa        Redwine Combs     F       56  2:34:22
+TIM         MURR              M       65  2:34:59
+Charlie     Hale              M       52  2:35:14
+Heather     Atlee             F       32  2:35:17
+Michael     Woodward          M       44  2:35:23
+Ashley      Woodward          F       21  2:35:23
+LeeAnn      Lewis             F       48  2:35:38
+Shea        Clay              F       46  2:36:00
+Cheryl      McHone            F       35  2:36:01
+Stephanie   Rector            F       31  2:36:02
+MORGANNE    STURGILL          F       21  2:38:11
+Karrie      Mullins-Potter    F       39  2:38:16
+KRISTEN     WHITED            F       36  2:38:23
+LuLu        Vaughn            F       48  2:38:27
+Gene        Chumley           M       54  2:38:27
+Ashley      Ward              F       24  2:38:36
+Christopher Thedy             M       29  2:39:44
+Matthew     Cloyd             M       30  2:39:46
+Joshua      Culbert           M       29  2:39:56
+Julie       Williams          F       54  2:40:16
+Hannah      Wheeler           F       29  2:40:32
+Lori        Ray               F       54  2:40:34
+Amber       Shell             F       29  2:40:37
+Moe         Brown             M       60  2:40:42
+Lauran      Suggs             F       32  2:40:46
+Leah        Charlton          F       40  2:41:10
+Beth        Collake           F       32  2:41:26
+Stephanie   Wright            F       33  2:41:28
+Melanie     Fleenor           F       35  2:41:46
+Ashley      Hale              F       35  2:41:48
+Cheri       Potter            F       41  2:42:11
+Mandy       Lemon             F       43  2:42:13
+Rachel      Hammonds          F       27  2:42:19
+Blakleah    Hensley           F       28  2:42:21
+Jane        Hayes             F       40  2:42:27
+Anita       Kilbourne-Greer   F       48  2:42:29
+Joni        Leonard           F       36  2:42:54
+Debbie      May               F       51  2:43:03
+Sally       Howard            F       46  2:43:04
+April       Jordan            F       36  2:43:33
+Melina      Summey            F       12  2:43:57
+Tammy       Dykes             F       45  2:44:00
+John        Cahill            M       50  2:44:56
+Daphne      Ringley           F       43  2:44:59
+Laurie      Hasselback        F       54  2:45:44
+Danessa     Dixon             F       38  2:45:48
+Chip        Millican          M       44  2:45:48
+Tamara      Wilson            F       56  2:45:48
+Anneci      Powell            F       55  2:46:00
+Allison     Elliott           F       40  2:46:08
+Esther      Shelton           F       39  2:46:40
+BECKY       CHAPMAN           F       33  2:46:56
+Jeff        Widener           M       52  2:47:15
+Megan       McAmis            F       31  2:47:19
+Tamara      Smith             F       58  2:48:01
+Genevieve   Lively            F       39  2:48:34
+Paige       Puckett-Hall      F       35  2:49:31
+Annette     Curry             F       51  2:49:40
+Sara        Holt              F       47  2:49:53
+Heather     Horner            F       42  2:49:53
+Katie       Wilhoit           F       36  2:50:21
+brian       enkema            M       43  2:50:23
+Patsy       Cantor            F       47  2:50:24
+Julie       Bedwani           F       29  2:50:35
+Caitlyn     Strouth           F       27  2:50:36
+Jessica     Astacio           F       24  2:50:36
+michelle    killen            F       46  2:50:49
+amy         smith             F       46  2:50:51
+Donald      Davis             M       74  2:52:01
+Max         Sweat             M       63  2:52:35
+Amy         Curry             F       28  2:52:55
+Carissa     Chambers          F       29  2:53:15
+Caitlin     Colley            F       27  2:54:02
+Rachel      Dean              F       27  2:54:06
+Casey       Applebaum         F       28  2:54:06
+Emily       Jones             F       21  2:54:55
+Brandi      Lewis             F       23  2:55:33
+Santana     Stevens           F       32  2:55:41
+Jo          Bennett           F       74  2:55:45
+Jake        VanHuss           M       40  2:55:55
+Rose        VanHuss           F       40  2:55:58
+Maria       Kosh              F       26  2:57:13
+Crystal     Landers           F       38  2:57:13
+Christopher Persiani          M       45  2:57:20
+Kimberly    Ashworth          F       55  2:57:33
+Audrey      Cloyd             F       26  2:57:47
+Evelyn      Thrasher          F       50  2:57:48
+Jessica     Kirby             F       27  2:58:24
+Beth        Coppenger         F       44  2:59:21
+David       Campbell          M       40  2:59:42
+Amber       Lavinder          F       36  3:00:07
+Gary        Childers          M       57  3:00:07
+Cindy       Childers          F       55  3:00:07
+Nancy       Weaver            F       37  3:00:11
+Elizabeth   Burns             F       38  3:00:12
+CRYSTAL     LYKE              F       38  3:00:55
+Melissa     Edmondson         F       39  3:01:05
+Megan       Carner            F       32  3:01:29
+Ryan        Catterson         M       36  3:03:25
+Jessica     Catterson         F       33  3:03:26
+NICOLE      MOON              F       48  3:03:42
+Andi        Crowley           F       50  3:03:53
+Daniel      Joseph            M       13  3:03:57
+JANE        wilkinson         F       57  3:04:07
+Paul        Burger            M       46  3:04:24
+Jessica     Frazier           F       23  3:04:52
+Courtney    Little            F       29  3:04:58
+Crystal     Hatfield          F       39  3:04:58
+Drew        Leach             F       22  3:06:53
+Lukas       Heller            M       26  3:06:54
+Louie       Leach             M       50  3:06:55
+Becca       Jones             F       39  3:07:14
+Tim         Bolden            M       52  3:07:48
+Larry       Sanders           M       56  3:09:07
+Philip      Stinson           M       55  3:10:39
+ADAM        PIERSON           M       33  3:12:36
+Melissa     Pierson           F       29  3:12:36
+Joie        Cantrell          F       48  3:13:40
+Michelle    Bailey            F       36  3:18:39
+Travis      Smith             M       27  3:18:58
+Troy        Brown             M       50  3:19:23
+Chase       Abe               M       27  3:19:31
+Markeeta    Walker            F       51  3:19:34
+Kyla        Schwarten         F       33  3:26:41
+Leigh       Stringfield       F       52  3:26:56
+Savannah    Curry             F       32  3:30:00
+Lisa        Breeze            F       41  3:30:05
+Barbara     Bogart            F       75  3:33:23
+TIFFANY     COMPTON           F       34  3:38:00
+Naomi       Adkins            F       33  3:38:00
+Stephenie   Mullins           F       43  3:38:00
+Aimee       Henley            F       30  3:50:14
+Bethany     Collins           F       31  3:50:14
+Lessa       Wilson            F       26  4:20:19
+            

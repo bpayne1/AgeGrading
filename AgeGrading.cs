@@ -321,16 +321,35 @@ internal static string GetFolderPath()
             set { mInitializingKQRaces = value; }
         }
 
-        private void LoadRacesCombo()
+        private string GetRaceFileName(RaceInfo raceInfo)
         {
-            if (cmbKQRace.Items.Count > 0) return;
+            if (raceInfo == null) return String.Empty;
+            string xmlName = String.Empty;
+            if (raceInfo != null && !String.IsNullOrEmpty(raceInfo.Name))
+            {
+                xmlName = raceInfo.Name;
+                xmlName = String.Format("{0}.{1}", xmlName, kXMLExtension);
+            }
+            return xmlName;
+        }
+
+        private void LoadRacesCombo(bool reload = false)
+        {
+            if (!reload && cmbKQRace.Items.Count > 0) return;
             try
             {
+                cmbKQRace.Items.Clear();
                 InitializingKQRaces = true;
+                string folder = GetFolderPath();
                 List<RaceInfo> races = RaceInfo.GetRaces();
                 if (races == null || races.Count <= 0) return;
                 foreach (RaceInfo race in races)
                 {
+                    if (!String.IsNullOrEmpty(folder))
+                    {
+                        string path = Path.Combine(folder, GetRaceFileName(race));
+                        if (File.Exists(path)) race.FileExists = true;
+                    }
                     cmbKQRace.Items.Add(race);
                 }
                 cmbKQRace.Items.Insert(0, kDefaultKQRace);
@@ -2236,6 +2255,11 @@ internal static string GetFolderPath()
 
         private void toolStripMenuItemSaveRaceResults_Click(object sender, EventArgs e)
         {
+            SaveRaceResults();
+        }
+
+        private void SaveRaceResults()
+        {
             DataTable dataTable = dataGridView.DataSource as DataTable;
             if (dataTable == null) return;
             try
@@ -2249,6 +2273,7 @@ internal static string GetFolderPath()
                 string fileName = String.Format("{0}.{1}", xmlName, kXMLExtension);
                 SaveDataTable(dataTable, fileName, true, comment, GetLastRaceDirectory());
                 btnCompareMissingMembers.Enabled = (!String.IsNullOrEmpty(fileName) && File.Exists(fileName));
+                LoadRacesCombo(true);
             }
             catch (Exception ex)
             {
@@ -2592,6 +2617,154 @@ internal static string GetFolderPath()
                 {
                     mDataTable = dataTable;
                     btnCompareMissingMembers.Enabled = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, String.Format("Race file ({0}) doesn't exist", racePath), "Error: Race File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSaveSelectedRace_Click(object sender, EventArgs e)
+        {
+            SaveRaceResults();
+        }
+
+        public class TableColumn
+        {
+            private int _MaximumWidth;
+            public int MaximumWidth
+            {
+                get { return _MaximumWidth; }
+                set { _MaximumWidth = value; }
+            }
+
+            private List<string> _Contents;
+            public List<string> Contents
+            {
+                get { return _Contents; }
+                private set { _Contents = value; }
+            }
+
+            public void AddContent(string content)
+            {
+                if (content == null) content = String.Empty;
+                content = content.Trim();
+                if (_Contents == null) _Contents = new List<string>();
+                Contents.Add(content);
+            }
+
+            private string _Name;
+            public string Name
+            {
+                get { return _Name; }
+                set { _Name = value; }
+            }
+
+            public TableColumn(string name)
+            {
+                this.Name = name;
+            }
+        }
+
+        private HashSet<string> _columnsToSkip;
+        private bool SkipColumn(string name)
+        {
+            if (String.IsNullOrWhiteSpace(name)) return true;
+            if (_columnsToSkip == null)
+            {
+                _columnsToSkip = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+                {
+                    kAgeAdjustedColumnName,
+                    kNormalizedTimeColumnName,
+                    kWorldPercentColumnName,
+                };
+            }
+            return _columnsToSkip.Contains(name);
+        }
+
+        private string PadWithSpaces(string text, int padCount, char padCharacter)
+        {
+            if (text == null) text = String.Empty;
+            int count = padCount - text.Length;
+            if (count > 0)
+            {
+                for (int ii = 0; ii < count; ii++)
+                {
+                    text += padCharacter;
+                }
+            }
+            return text;
+        }
+
+        private void saveRawResultsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string raceFileName = GetRaceFileName();
+            string path = GetFolderPath();
+            string racePath = Path.Combine(path, raceFileName);
+            if (File.Exists(racePath))
+            {
+                DataTable dataTable = OpenResults(racePath);
+                if (dataTable != null)
+                {
+                    List<TableColumn> tableColumns = new List<TableColumn>();
+                    for (int ii = 0; ii < dataTable.Columns.Count; ii++)
+                    {
+                        DataColumn column = dataTable.Columns[ii];
+                        if (column == null) continue;
+                        if (SkipColumn(column.Caption)) continue;
+
+                        TableColumn tableColumn = new TableColumn(column.Caption);
+                        tableColumn.MaximumWidth = column.Caption.Length;
+                        for (int jj = 0; jj < dataTable.Rows.Count; jj++)
+                        {
+                            DataRow row = dataTable.Rows[jj];
+                            if (row == null) continue;
+                            object value = row.ItemArray[ii];
+                            if (value == null) value = String.Empty;
+                            string content = value.ToString();
+                            if (content.Length > tableColumn.MaximumWidth)
+                                tableColumn.MaximumWidth = content.Length;
+                            tableColumn.AddContent(content);
+                        }
+                        tableColumns.Add(tableColumn);
+                    }
+                    string directory = Path.GetDirectoryName(racePath);
+                    string nameWithoutExtension = Path.GetFileNameWithoutExtension(racePath) + "Results" + ".txt";
+                    string resultName = Path.Combine(directory, nameWithoutExtension);
+                    int rowCount = tableColumns[0].Contents.Count;
+                    List<StringBuilder> lines = new List<StringBuilder>();
+                    for (int ii = 0; ii < rowCount; ii++)
+                    {
+                        lines.Add(new StringBuilder());
+                    }
+                    for (int ii = 0; ii < rowCount; ii++)
+                    {
+                        StringBuilder cell = lines[ii];
+                        foreach (var item in tableColumns)
+                        {
+                            string columnValue = item.Contents[ii];
+                            cell.Append(PadWithSpaces(columnValue, item.MaximumWidth + 1, ' '));
+                        }
+                    }
+
+                    StringBuilder firstRow = new StringBuilder();
+                    StringBuilder secondRow = new StringBuilder();
+                    foreach (var item in tableColumns)
+                    {
+                        firstRow.Append(PadWithSpaces(item.Name, item.MaximumWidth + 1, ' '));
+                        string delimiters = PadWithSpaces(String.Empty, item.MaximumWidth, '=');
+                        secondRow.Append(PadWithSpaces(delimiters, item.MaximumWidth + 1, ' '));
+                    }
+                    lines.Insert(0, secondRow);
+                    lines.Insert(0, firstRow);
+                    using (TextWriter writer = File.CreateText(resultName))
+                    {
+                        foreach (StringBuilder item in lines)
+                        {
+                            if (item != null) writer.WriteLine(item.ToString());
+                        }
+                    }
                 }
             }
             else
