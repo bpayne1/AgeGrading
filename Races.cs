@@ -192,7 +192,7 @@ namespace AgeGrading
             raceInfo = new RaceInfo("Apple Festival 4 Miler", 6.4373760, 4.0, DateTime.Parse("10/7/17")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("HeartOne 5K", 5.0000000, 0.0, DateTime.Parse("10/14/17")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Run Fur Their Lives 5K", 5.0000000, 0.0, DateTime.Parse("10/1/2017")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Run Fur Their Lives 10K", 5.0000000, 0.0, DateTime.Parse("10/1/2017")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Run Fur Their Lives 10K", 10.0000000, 0.0, DateTime.Parse("10/1/2017")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("War Party 10K", 10.0000000, 0.0, DateTime.Parse("02/18/17")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Tri-Cities Race for the Cure 5K", 5.0000000, 0.0, DateTime.Parse("10/13/17")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Haunted Half Marathon", 21.0824064, 13.1, DateTime.Parse("10/28/17")); mRaces.Add(raceInfo);
