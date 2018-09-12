@@ -49,6 +49,9 @@ Temporary Items
 .vs/AgeGrading/v14/.suo
 bin/x64/Debug/AgeGrading.exe.config
 *.pdb
+**/bin/*
+**/obj/*
+**/.vs/*
 **/bin/Debug/*.*
 **/bin/Release/*.*
 **/obj/Debug/*.*
