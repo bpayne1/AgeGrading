@@ -2856,24 +2856,32 @@ internal static string GetFolderPath()
             HtmlWeb htmlWeb = new HtmlWeb();
 
             // Creates an HtmlDocument object from an URL
-            HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(url);
-            HtmlNode article = document.DocumentNode.SelectSingleNode("//article");
-            if (article == null) return;
-            HtmlNode title = article.SelectSingleNode("//h2");
-            RaceInfo raceInfo = FindMatchingRace(title.InnerText);
-            if (raceInfo != null)
-                SetToRace(raceInfo);
-            HtmlNode raceResults = document.DocumentNode.SelectSingleNode("//pre");
-            if (raceResults != null)
+
+            try
             {
-                StringBuilder str = new StringBuilder();
-                string results = raceResults.InnerText;
-                string[] lines = results.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                foreach (var item in lines)
+                HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(url);
+                HtmlNode article = document.DocumentNode.SelectSingleNode("//article");
+                if (article == null) return;
+                HtmlNode title = article.SelectSingleNode("//h2");
+                RaceInfo raceInfo = FindMatchingRace(title.InnerText);
+                if (raceInfo != null)
+                    SetToRace(raceInfo);
+                HtmlNode raceResults = document.DocumentNode.SelectSingleNode("//pre");
+                if (raceResults != null)
                 {
-                    str.AppendLine(item);
+                    StringBuilder str = new StringBuilder();
+                    string results = raceResults.InnerText;
+                    string[] lines = results.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                    foreach (var item in lines)
+                    {
+                        str.AppendLine(item);
+                    }
+                    txtRaceResults.Text = str.ToString();
                 }
-                txtRaceResults.Text = str.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, $"Failed to open URL link: {ex.Message}", "Error: Html Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
