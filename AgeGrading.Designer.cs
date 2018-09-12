@@ -62,6 +62,7 @@
             this.toolStripMenuItemFindNext = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSelectColumn = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveRawResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelRaceInput = new System.Windows.Forms.Label();
             this.labelAgeGradingResults = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
@@ -96,7 +97,6 @@
             this.btnCombineFirstAndLastNames = new System.Windows.Forms.Button();
             this.btnAddSelectedRace = new System.Windows.Forms.Button();
             this.btnSaveSelectedRace = new System.Windows.Forms.Button();
-            this.saveRawResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripRichText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStartingLineNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numColumnsLineNumber)).BeginInit();
@@ -359,7 +359,7 @@
             this.copyToolStripMenuItem,
             this.saveRawResultsToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(174, 252);
+            this.contextMenuStrip.Size = new System.Drawing.Size(174, 230);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             // 
             // toolStripMenuItemOpen
@@ -433,6 +433,13 @@
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.copyToolStripMenuItem.Text = "&Copy            Ctrl+C";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // saveRawResultsToolStripMenuItem
+            // 
+            this.saveRawResultsToolStripMenuItem.Name = "saveRawResultsToolStripMenuItem";
+            this.saveRawResultsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.saveRawResultsToolStripMenuItem.Text = "Save Ra&w Results";
+            this.saveRawResultsToolStripMenuItem.Click += new System.EventHandler(this.saveRawResultsToolStripMenuItem_Click);
             // 
             // labelRaceInput
             // 
@@ -771,15 +778,9 @@
             this.btnSaveSelectedRace.UseVisualStyleBackColor = true;
             this.btnSaveSelectedRace.Click += new System.EventHandler(this.btnSaveSelectedRace_Click);
             // 
-            // saveRawResultsToolStripMenuItem
-            // 
-            this.saveRawResultsToolStripMenuItem.Name = "saveRawResultsToolStripMenuItem";
-            this.saveRawResultsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.saveRawResultsToolStripMenuItem.Text = "Save Ra&w Results";
-            this.saveRawResultsToolStripMenuItem.Click += new System.EventHandler(this.saveRawResultsToolStripMenuItem_Click);
-            // 
             // AgeGradingForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 503);
@@ -823,6 +824,8 @@
             this.MinimumSize = new System.Drawing.Size(948, 541);
             this.Name = "AgeGradingForm";
             this.Text = "Age Grading";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.AgeGradingForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.AgeGradingForm_DragEnter);
             this.contextMenuStripRichText.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numStartingLineNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numColumnsLineNumber)).EndInit();

@@ -57,3 +57,6 @@ bin/x64/Debug/AgeGrading.exe.config
 **/bin/x64/Release/*.*
 **/obj/x64/Debug/*.*
 **/obj/x64/Release/*.*
+**/bin/x64/Debug/*
+**/bin/x64/Release/*
+**/packages/*

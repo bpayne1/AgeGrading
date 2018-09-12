@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Globalization;
 using System.Xml;
+using HtmlAgilityPack;
 
 namespace AgeGrading
 {
@@ -39,7 +40,7 @@ namespace AgeGrading
             RaceInfo.BuildRaceInfo();
         }
 
-         public const string kYear = "2017";
+         public const string kYear = "2018";
          private static int mYear;
          public static int Year
          {
@@ -333,6 +334,41 @@ internal static string GetFolderPath()
             return xmlName;
         }
 
+        private RaceInfo FindMatchingRace(string raceName)
+        {
+            if (String.IsNullOrWhiteSpace(raceName)) return null;
+            string year = Year.ToString();
+            if (raceName.StartsWith(year))
+                raceName = raceName.Substring(year.Length);
+            List<RaceInfo> races = RaceInfo.GetRaces();
+            string[] temp = raceName.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            List<string> words = new List<string>(temp);
+            List<RaceInfo> matching = new List<RaceInfo>(races);
+            foreach (var item in words)
+            {
+                matching = FindMatchingRaces(item, matching);
+                if (matching != null)
+                {
+                    if (matching.Count == 1) return matching[0];
+                    else if (matching.Count < 1) matching = new List<RaceInfo>(races);
+                }
+            }
+            return null;
+        }
+
+        private List<RaceInfo> FindMatchingRaces(string word, List<RaceInfo> matchingSoFar)
+        {
+            word = word.ToLower();
+            List<RaceInfo> matching = new List<RaceInfo>();
+            foreach (var item in matchingSoFar)
+            {
+                if (item == null) continue;
+                if (item.Name.ToLower().Contains(word))
+                    matching.Add(item);
+            }
+            return matching;
+        }
+
         private void LoadRacesCombo(bool reload = false)
         {
             if (!reload && cmbKQRace.Items.Count > 0) return;
@@ -366,6 +402,27 @@ internal static string GetFolderPath()
             {
                 InitializingKQRaces = false;
             }
+        }
+
+        private void SetToRace(RaceInfo raceInfo)
+        {
+            if (raceInfo == null) return;
+            string raceName = raceInfo.Name.ToLower();
+            int index = -1;
+            for (int ii = 0; ii < cmbKQRace.Items.Count; ii++)
+            {
+                object item = cmbKQRace.Items[ii];
+                if (item == null) continue;
+                string name = item.ToString().ToLower();
+                if (name.EndsWith(raceName))
+                {
+                    index = ii;
+                    break;
+                }
+            }
+            if (index < 0) return;
+            cmbKQRace.SelectedIndex = index;
+            SetRaceToolTip();
         }
 
         private void SetRaceToolTip()
@@ -2770,6 +2827,53 @@ internal static string GetFolderPath()
             else
             {
                 MessageBox.Show(this, String.Format("Race file ({0}) doesn't exist", racePath), "Error: Race File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AgeGradingForm_DragDrop(object sender, DragEventArgs e)
+        {
+            string url = string.Empty;
+            if (e.Data.GetDataPresent("HTML Format"))
+            {
+                url = e.Data.GetData(typeof(string)) as string;
+            }
+            if (!String.IsNullOrWhiteSpace(url))
+            {
+                LoadHtml(url);
+            }
+        }
+
+        private void AgeGradingForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent("HTML Format"))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void LoadHtml(string url)
+        {
+            HtmlWeb htmlWeb = new HtmlWeb();
+
+            // Creates an HtmlDocument object from an URL
+            HtmlAgilityPack.HtmlDocument document = htmlWeb.Load(url);
+            HtmlNode article = document.DocumentNode.SelectSingleNode("//article");
+            if (article == null) return;
+            HtmlNode title = article.SelectSingleNode("//h2");
+            RaceInfo raceInfo = FindMatchingRace(title.InnerText);
+            if (raceInfo != null)
+                SetToRace(raceInfo);
+            HtmlNode raceResults = document.DocumentNode.SelectSingleNode("//pre");
+            if (raceResults != null)
+            {
+                StringBuilder str = new StringBuilder();
+                string results = raceResults.InnerText;
+                string[] lines = results.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in lines)
+                {
+                    str.AppendLine(item);
+                }
+                txtRaceResults.Text = str.ToString();
             }
         }
     }
