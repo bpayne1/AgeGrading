@@ -12,6 +12,7 @@ using System.IO;
 using System.Globalization;
 using System.Xml;
 using HtmlAgilityPack;
+using System.Threading;
 
 namespace AgeGrading
 {
@@ -334,6 +335,51 @@ internal static string GetFolderPath()
             return xmlName;
         }
 
+        private string EnsureWhiteSpaceMatch(string text)
+        {
+            if (text == null) return string.Empty;
+            string[] temp = text.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            if (temp == null) return string.Empty;
+            StringBuilder str = new StringBuilder();
+            foreach (var item in temp)
+            {
+                if (String.IsNullOrWhiteSpace(item)) continue;
+                if (str.Length > 0)
+                    str.Append(" ");
+                str.Append(item);
+            }
+            return str.ToString();
+        }
+
+        private bool CloseMatchToPrimary(string primary, string text)
+        {
+            if (string.IsNullOrWhiteSpace(primary)) return false;
+            if (string.IsNullOrWhiteSpace(text)) return false;
+            string[] temp = primary.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            if (temp == null) return false;
+            int matchingCount = 0;
+            text = text.ToLower();
+            foreach (var item in temp)
+            {
+                if (text.Contains(item.ToLower()))
+                    matchingCount++;
+            }
+            if (matchingCount < 1) return false;
+            double matchedPercentage = (100 * matchingCount) / temp.Length;
+            return (matchedPercentage >= 66);
+        }
+
+        private RaceInfo VerifyMatch(string raceName, RaceInfo matching)
+        {
+            if (String.IsNullOrWhiteSpace(raceName)) return null;
+            if (matching == null) return null;
+            // We need to verify the name actually is close enough to the original to
+            // consider it a valid match.
+            if (CloseMatchToPrimary(matching.Name, raceName))
+                return matching;
+            return cmbKQRace.Items[0] as RaceInfo;
+        }
+
         private RaceInfo FindMatchingRace(string raceName)
         {
             if (String.IsNullOrWhiteSpace(raceName)) return null;
@@ -349,7 +395,7 @@ internal static string GetFolderPath()
                 matching = FindMatchingRaces(item, matching);
                 if (matching != null)
                 {
-                    if (matching.Count == 1) return matching[0];
+                    if (matching.Count == 1) return VerifyMatch(raceName, matching[0]);
                     else if (matching.Count < 1) matching = new List<RaceInfo>(races);
                 }
             }
@@ -406,7 +452,11 @@ internal static string GetFolderPath()
 
         private void SetToRace(RaceInfo raceInfo)
         {
-            if (raceInfo == null) return;
+            if (raceInfo == null)
+            {
+                cmbKQRace.SelectedIndex = 0;
+                return;
+            }
             string raceName = raceInfo.Name.ToLower();
             int index = -1;
             for (int ii = 0; ii < cmbKQRace.Items.Count; ii++)
@@ -2864,8 +2914,7 @@ internal static string GetFolderPath()
                 if (article == null) return;
                 HtmlNode title = article.SelectSingleNode("//h2");
                 RaceInfo raceInfo = FindMatchingRace(title.InnerText);
-                if (raceInfo != null)
-                    SetToRace(raceInfo);
+                SetToRace(raceInfo);
                 HtmlNode raceResults = document.DocumentNode.SelectSingleNode("//pre");
                 if (raceResults != null)
                 {
@@ -2877,6 +2926,21 @@ internal static string GetFolderPath()
                         str.AppendLine(item);
                     }
                     txtRaceResults.Text = str.ToString();
+                }
+                if (raceInfo == null)
+                {
+                    using (var bgw = new BackgroundWorker())
+                    {
+                        bgw.DoWork += (_, __) =>
+                        {
+                              Thread.Sleep(500);
+                        };
+                        bgw.RunWorkerCompleted += (_, __) =>
+                        {
+                            MessageBox.Show(this, $"Failed to find matching race for '{title.InnerText}'", "Error: Unknown Race", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        };
+                        bgw.RunWorkerAsync();
+                    }
                 }
             }
             catch (Exception ex)

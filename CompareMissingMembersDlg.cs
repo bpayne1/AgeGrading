@@ -288,7 +288,7 @@ namespace AgeGrading
             }
         }
 
-        private char[] mSeparator;
+        private static char[] mSeparator;
         private bool ContainsName(string name1, string name2)
         {
             if (String.IsNullOrEmpty(name1)) return false;
@@ -342,6 +342,8 @@ namespace AgeGrading
                 if (firstName1.StartsWith(firstName2[0].ToString(), StringComparison.OrdinalIgnoreCase))
                     return true;
             }
+            int lastIndex1 = split1.Length - 1;
+            int lastIndex2 = split2.Length - 1;
             for (int ii = 0; ii < split1.Length; ii++)
             {
                 string separtedName1 = split1[ii];
