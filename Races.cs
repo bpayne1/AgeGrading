@@ -163,7 +163,7 @@ namespace AgeGrading
             raceInfo = new RaceInfo(kDefaultRaceName, 5.0000000, 0.0, DateTime.Parse("01/01/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("War Party 10K", 10.0000000, 0.0, DateTime.Parse("02/16/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Surgoinsville 10 Miler", 16.0934400, 10.0, DateTime.Parse("03/09/19")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Virginia Creeper 10 Miler", 16.0934400, 10.0, DateTime.Parse("03/17/19")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Virginia Creeper 10 Miler", 16.0934400, 10.0, DateTime.Parse("03/30/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Mendota 5K River Run", 5.0000000, 0.0, DateTime.Parse("03/11/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("5K Run for St Anne School", 5.0000000, 0.0, DateTime.Parse("05/13/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Chasing Snakes 10K", 10.0000000, 0.0, DateTime.Parse("03/18/19")); mRaces.Add(raceInfo);
