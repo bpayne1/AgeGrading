@@ -643,6 +643,10 @@ namespace AgeGrading
             if (cellRowIndex < 0 || cellRowIndex >= dataGridViewMissingMembers.RowCount) return false;
             bool foundMatchingCell = false;
             int minimumAge = KQCompetitionData.kMinimumEligibilityAge - 1;
+            if (0 == String.Compare(name1, "Amy Bradley", true))
+            {
+
+            }
             for (int rowIndex = 0; rowIndex < dataGridView.RowCount; rowIndex++)
             {
                 DataGridViewRow row = dataGridView.Rows[rowIndex];
@@ -842,8 +846,12 @@ namespace AgeGrading
         }
     }
 
-    public class MyDataGridView : DataGridView
+    public class MyDataGridView : System.Windows.Forms.DataGridView
     {
+        public MyDataGridView()
+        {
+        }
+
         protected override void OnSorted(EventArgs e)
         {
             base.OnSorted(e);

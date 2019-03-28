@@ -41,7 +41,7 @@ namespace AgeGrading
             RaceInfo.BuildRaceInfo();
         }
 
-         public const string kYear = "2018";
+         public const string kYear = "2019";
          private static int mYear;
          public static int Year
          {
@@ -1391,13 +1391,13 @@ internal static string GetFolderPath()
 
         private string mLastDataTableFileName;
         private const string kXMLExtension = "xml";
-        private const string kXLSExtension = "xls";
+        private const string kXLSExtension = "xlsx";
         private const string kCSVExtension = "csv";
         protected const string kInitialDirectoryKey = "InitialDirectory";
         protected const string kLastOpenedDirectoryKey = "LastOpenedDirectoryKey";
         protected const string kLastRaceDirectoryKey = "LastRaceDirectoryKey";
         protected const string kXMLFileFilter = "XML files (*.xml)|*.xml";
-        protected const string kXLSFileFilter = "xls files (*.xls)|*.xls";
+        protected const string kXLSFileFilter = "xlsx files (*.xlsx)|*.xlsx|xls files (*.xls)|*.xls";
         protected const string kCSVFileFilter = "CSV files (*.csv)|*.csv";
         private string mLastDirectory;
         private string mLastOpenedDirectory;

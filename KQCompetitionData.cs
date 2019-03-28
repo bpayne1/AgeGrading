@@ -111,7 +111,7 @@ namespace AgeGrading
                 if (String.Equals(lastName, mAddOrUpdateStopOn, StringComparison.OrdinalIgnoreCase))
                 {
                 }
-                if (0 == String.Compare("Payne", lastName, true))
+                if (0 == String.Compare("BRADLEY", lastName, true))
                 {
 
                 }
@@ -522,14 +522,14 @@ namespace AgeGrading
                 {
                     if (row == null) continue;
                     string lastName = row[kMemberLastName].ToString();
-                    if (String.Equals("BENTLEY", lastName, StringComparison.OrdinalIgnoreCase))
-                    {
-
-                    }
                     string firstName = row[kMemberFirstName].ToString();
                     string firstNameAliases = row[kMemberFirstNameAliases].ToString();
                     string gender = row[kMemberGender].ToString();
                     string DOB = row[kMemberDOB].ToString();
+                    if (String.Equals("BRADLEY", lastName, StringComparison.OrdinalIgnoreCase))
+                    {
+
+                    }
                     if (String.IsNullOrEmpty(DOB)) DOB = DateTime.MinValue.ToString();
                     string tableGender = AgeGrading.AgeGradingTables.AgeAdjustResult.GetGender(gender);
                     if (String.IsNullOrEmpty(tableGender)) gender = String.Empty;

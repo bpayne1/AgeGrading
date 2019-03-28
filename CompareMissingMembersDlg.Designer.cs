@@ -35,10 +35,10 @@
             this.labelFirstAgeGroup = new System.Windows.Forms.Label();
             this.numAgeGroup = new System.Windows.Forms.NumericUpDown();
             this.labelAgeGradingResults = new System.Windows.Forms.Label();
-            this.dataGridView = new AgeGrading.MyDataGridView();
+            this.dataGridView = new  System.Windows.Forms.DataGridView();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.dataGridViewHighlight = new System.Windows.Forms.DataGridView();
-            this.dataGridViewMissingMembers = new AgeGrading.MyDataGridView();
+            this.dataGridViewMissingMembers = new  System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.labelMissingMembers = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
@@ -305,9 +305,9 @@
         private System.Windows.Forms.Label labelFirstAgeGroup;
         private System.Windows.Forms.NumericUpDown numAgeGroup;
         private System.Windows.Forms.Label labelAgeGradingResults;
-        private MyDataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.SplitContainer splitContainer;
-        private MyDataGridView dataGridViewMissingMembers;
+        private System.Windows.Forms.DataGridView dataGridViewMissingMembers;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label labelMissingMembers;
         private System.Windows.Forms.Button btnRestart;
