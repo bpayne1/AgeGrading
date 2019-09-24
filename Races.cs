@@ -172,7 +172,7 @@ namespace AgeGrading
             raceInfo = new RaceInfo("Amis Mill 10K", 10.0000000, 0.0, DateTime.Parse("05/11/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Justin Foundation 5K", 5.0000000, 0.0, DateTime.Parse("5/21/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("CASA 8K", 8.0000000, 0.0, DateTime.Parse("6/4/19")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("River Mile", 1.6093440, 1.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("River Mile", 1.6093440, 1.0, DateTime.Parse("06/04/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Phipps Bend River Run", 0.0, 10.0, DateTime.Parse("10/12/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Mountain States Rehab 5K", 5.0000000, 0.0, DateTime.Parse("06/17/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Varmint Half Marathon", 21.0824064, 13.1, DateTime.Parse("6/8/19")); mRaces.Add(raceInfo);
