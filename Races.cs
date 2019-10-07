@@ -179,7 +179,7 @@ namespace AgeGrading
             //raceInfo = new RaceInfo("Crooked River Half Marathon", 21.0824064, 13.1, DateTime.Parse("10/15/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Rhododendron 10K", 10.0000000, 0.0, DateTime.Parse("6/22/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Firecracker 4 miler", 6.4373760, 4.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Red, White & Boom 4 Miler", 6.4373760, 4.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Red, White & Boom 4 Miler", 6.4373760, 4.0, DateTime.Parse("7/4/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Crazy 8s 8K", 8.0000000, 0.0, DateTime.Parse("7/8/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Wolf Run 7 Miler", 11.2654080, 7.0, DateTime.Parse("7/18/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Railroad Days 5K", 5.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);

@@ -111,7 +111,7 @@ namespace AgeGrading
                 if (String.Equals(lastName, mAddOrUpdateStopOn, StringComparison.OrdinalIgnoreCase))
                 {
                 }
-                if (0 == String.Compare("BRADLEY", lastName, true))
+                if (0 == String.Compare("BAYS", lastName, true))
                 {
 
                 }
@@ -217,6 +217,10 @@ namespace AgeGrading
         {
             try
             {
+                if (firstName.Contains("LES") && lastName.Contains("BAYS"))
+                {
+
+                }
                 List<DataRow> rows = FindMatchingRows(dataTable.Rows, lastName, nameColumn, true);
                 if (rows != null && rows.Count > 0)
                 {
@@ -227,7 +231,7 @@ namespace AgeGrading
                         if (matchingRows != null && matchingRows.Count > 0) matchingRows = FindMatchingRows(matchingRows, gender, genderColumn, false);
                     }
                 }
-                if (matchingRows != null && matchingRows.Count > 1)
+                if (matchingRows != null && matchingRows.Count >= 1)
                 {
                     if (!String.IsNullOrEmpty(DOB))
                     {
@@ -242,6 +246,9 @@ namespace AgeGrading
                                 foreach (DataRow item in matchingRows)
                                 {
                                     int age = (int)item[ageColumn];
+                                    // NOTE: This could still cause a false positive when
+                                    //       the name is embedded in the another person's
+                                    //       name and the ages match.
                                     if (age == years && dataRow == null) dataRow = item;
                                     else if (age == years)
                                     {
@@ -263,7 +270,14 @@ namespace AgeGrading
                             Debug.WriteLine(ex.ToString());
                         }
                     }
-                    throw new Exception("More than one name matches in the race results");
+                    if (matchingRows.Count > 1)
+                        throw new Exception("More than one name matches in the race results");
+                    else
+                    {
+                        // The age didn't match the only row found. This can happen if a person's name can
+                        // be found inside another person's name: Les Bays => CharLES BAYSinger. 
+                        matchingRows = null;
+                    }
                 }
                 if ((matchingRows == null || matchingRows.Count <= 0) && !String.IsNullOrEmpty(lastNameAliases))
                 {
@@ -282,7 +296,7 @@ namespace AgeGrading
                         }
                     }
                 }
-                if (matchingRows != null && matchingRows.Count > 1)
+                if (matchingRows != null && matchingRows.Count >= 1)
                 {
                     // Try to match the age to eliminate the duplicates.
                     try
@@ -295,6 +309,9 @@ namespace AgeGrading
                             foreach (DataRow item in matchingRows)
                             {
                                 int age = (int)item[ageColumn];
+                                // NOTE: This could still cause a false positive when
+                                //       the name is embedded in the another person's
+                                //       name and the ages match.
                                 if (age == years && dataRow == null) dataRow = item;
                                 else if (age == years)
                                 {
@@ -315,7 +332,14 @@ namespace AgeGrading
                     {
                         Debug.WriteLine(ex.ToString());
                     }
-                    throw new Exception("More than one name matches in the race results");
+                    if (matchingRows.Count > 1)
+                        throw new Exception("More than one name matches in the race results");
+                    else
+                    {
+                        // The age didn't match the only row found. This can happen if a person's name can
+                        // be found inside another person's name: Les Bays => CharLES BAYSinger. 
+                        matchingRows = null;
+                    }
                 }
             }
             catch
@@ -659,7 +683,10 @@ namespace AgeGrading
                     else if (checkContains)
                     {
                         int index = temp.IndexOf(theOperandValue, StringComparison.OrdinalIgnoreCase);
-                        if (index >= 0) matchingRows.Add(row);
+                        if (index >= 0)
+                        {
+                            matchingRows.Add(row);
+                        }
                     }
                 }
             }
