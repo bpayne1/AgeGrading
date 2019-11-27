@@ -111,7 +111,7 @@ namespace AgeGrading
                 if (String.Equals(lastName, mAddOrUpdateStopOn, StringComparison.OrdinalIgnoreCase))
                 {
                 }
-                if (0 == String.Compare("BAYS", lastName, true))
+                if (0 == String.Compare("Blaser", lastName, true))
                 {
 
                 }

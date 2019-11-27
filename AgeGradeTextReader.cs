@@ -153,12 +153,38 @@ namespace AgeGrading
             return list;
         }
 
+        private string[] TrimLines(string[] lines)
+        {
+            int longestLength = 0;
+            List<string> trimList = new List<string>();
+            foreach (var item in lines)
+            {
+                string line = item.TrimEnd();
+                if (line.Length > longestLength)
+                    longestLength = line.Length;
+                trimList.Add(line);
+            }
+            List<string> list = new List<string>();
+            foreach (var item in trimList)
+            {
+                string line = item;
+                if (line.Length < longestLength)
+                {
+                    // Add spaces to the end.
+                    line = line.PadRight(longestLength);
+                }
+                list.Add(line);
+            }
+            return list.ToArray();
+        }
+
         public List<List<string>> GetFixedColumnLines(string[] lines, int columnsLineNumber, int startingLine)
         {
             if (lines == null || lines.Length <= 0) return null;
             if (columnsLineNumber < 0 || lines.Length <= columnsLineNumber) columnsLineNumber = 0;
             if (startingLine < 0 || lines.Length <= startingLine) startingLine = 1;
             if (lines.Length <= startingLine) return null;
+            lines = TrimLines(lines);
             string columnHeader = lines[columnsLineNumber];
             string widthColumns = columnHeader;
             int widthColumn = columnsLineNumber + 1;
@@ -232,6 +258,7 @@ namespace AgeGrading
             for (int ii = 0; ii < widths.Count; ii++)
             {
                 int width = widths[ii];
+                width = Math.Min(width, headingColumns.Length - 1);
                 int lastIndex = (startingIndex + width);
                 string temp = String.Empty;
                 if (lastIndex < headingColumns.Length)

@@ -13,6 +13,18 @@ namespace AgeGrading
             this.Name = name;
             this.DistanceInKilometers = distanceInKilometers;
             this.DistanceMiles = distanceMiles;
+            // Try to correct the kilometers if what's passed in is zero
+            if (this.DistanceInKilometers <= 0.0)
+            {
+                this.DistanceInKilometers = GetKilometers();
+            }
+            // Try to correct the miles if what's passed in is zero
+            if (this.DistanceMiles <= 0.0)
+            {
+                this.DistanceMiles = GetMiles();
+            }
+            Debug.Assert(this.DistanceInKilometers >= 0.0);
+            Debug.Assert(this.DistanceMiles >= 0.0);
             this.RaceDate = raceDate;
             this.AgeGradeTable = AgeGradingTables.GetTableName(this.DistanceInKilometers);
         }
@@ -153,12 +165,21 @@ namespace AgeGrading
             return null;
         }
 
+        public static string UNKNOWNDATE = "1/1/2020";
+        public static int _currentYear = 0;
+        public static int _nextYear = 0;
         private const string kDefaultRaceName = "New Year's Day Wake Up 5K";
         public static void BuildRaceInfo()
         {
             if (mRaces != null) return;
+            // Set these up so we can notify the user that the race's
+            // data isn't currently set.
+            if (int.TryParse(AgeGradingForm.kYear, out _currentYear))
+            {
+                _nextYear = _currentYear + 1;
+                UNKNOWNDATE = $"1/1/{_nextYear}";
+            }
             mRaces = new List<RaceInfo>();
-            string UNKNOWNDATE = "1/1/2020";
             RaceInfo raceInfo = null;
             raceInfo = new RaceInfo(kDefaultRaceName, 5.0000000, 0.0, DateTime.Parse("01/01/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("War Party 10K", 10.0000000, 0.0, DateTime.Parse("02/16/19")); mRaces.Add(raceInfo);
@@ -187,11 +208,11 @@ namespace AgeGrading
             //raceInfo = new RaceInfo("Christopher Todd Richardson Memorial 10k", 10.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Greene County YMCA 5K", 5.0000000, 0.0, DateTime.Parse("8/17/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Eastman 10K", 10.0000000, 0.0, DateTime.Parse("9/9/19")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Baileyton Celebration 5K", 5.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Baileyton Celebration 5K", 5.0000000, 0.0, DateTime.Parse("9/7/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Bays Mountain Trail Race", 24.1401600, 15.0, DateTime.Parse("9/15/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Rhythm & Roots 5K", 5.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Apple Festival 4 Miler", 6.4373760, 4.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("NCH Heart-One Cardiac Rehab 5K Run", 5.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Apple Festival 4 Miler", 6.4373760, 4.0, DateTime.Parse("10/05/19")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("NCH Heart-One Cardiac Rehab 5K Run", 5.0000000, 0.0, DateTime.Parse("10/12/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Run Fur Their Lives 5K", 5.0000000, 0.0, DateTime.Parse("10/6/19")); mRaces.Add(raceInfo);
             raceInfo = new RaceInfo("Run Fur Their Lives 10K", 10.0000000, 0.0, DateTime.Parse("10/6/19")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Tri-Cities Race for the Cure 5K", 5.0000000, 0.0, DateTime.Parse("10/13/19")); mRaces.Add(raceInfo);

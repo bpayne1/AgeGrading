@@ -871,10 +871,26 @@ internal static string GetFolderPath()
             mTimeIndex = mColumns.FindIndex(s => s == mTimeColumnName);
         }
 
+        public static void ShowErrorMessage(string text)
+        {
+            if (text == null) text = string.Empty;
+            MessageBox.Show(text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void btnCalculateAgeGrade_Click(object sender, EventArgs e)
         {
-            int startingLineNumber = Convert.ToInt32(numStartingLineNumber.Value);
-            if (txtRaceResults.Lines == null || txtRaceResults.Lines.Length <= startingLineNumber) return;
+            RaceInfo raceInfo = GetKQRaceSelection();
+            if (raceInfo == null)
+            {
+                ShowErrorMessage($"Unable to find current race's information");
+                return;
+            }
+            int currentYear = DateTime.Now.Year;
+            if (raceInfo.RaceDate.Year != currentYear)
+            {
+                ShowErrorMessage($"The race date for '{raceInfo.Name}' hasn't been set or is incorrect: Race Date '{raceInfo.RaceDate}'");
+                return;
+            }
             if (mRowColumns == null || mRowColumns.Count <= 0) return;
             GetDataTable();
             if (mDataTable == null) return;
