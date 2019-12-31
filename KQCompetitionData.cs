@@ -111,11 +111,15 @@ namespace AgeGrading
                 if (String.Equals(lastName, mAddOrUpdateStopOn, StringComparison.OrdinalIgnoreCase))
                 {
                 }
-                if (0 == String.Compare("Blaser", lastName, true))
+                if (0 == String.Compare("LeClair", lastName, true))
                 {
 
                 }
                 List<DataRow> matchingRows = null;
+                if (0 == String.Compare("Ed", firstName, true))
+                {
+
+                }
                 try
                 {
                     matchingRows = FindMatchingRows(dataTable, nameColumn, firstNameColumn, genderColumn, firstName, lastName, firstNameAliases, lastNameAliases, gender, matchingRows, ageColumn, DOB, raceInfo.RaceDate);
@@ -217,7 +221,7 @@ namespace AgeGrading
         {
             try
             {
-                if (firstName.Contains("LES") && lastName.Contains("BAYS"))
+                if (firstName.Contains("ED") && lastName.Contains("CLAIRE"))
                 {
 
                 }
@@ -305,7 +309,7 @@ namespace AgeGrading
                         if (!DateTime.Equals(birthDate, DateTime.MinValue))
                         {
                             DataRow dataRow = null;
-                            int years = GetYears(birthDate, DateTime.Today);
+                            int years = GetYears(birthDate, raceDate);
                             foreach (DataRow item in matchingRows)
                             {
                                 int age = (int)item[ageColumn];
