@@ -41,7 +41,7 @@ namespace AgeGrading
             RaceInfo.BuildRaceInfo();
         }
 
-         public const string kYear = "2019";
+         public const string kYear = "2021";
          private static int mYear;
          public static int Year
          {
