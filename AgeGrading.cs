@@ -886,7 +886,7 @@ internal static string GetFolderPath()
 				return;
 			}
 			int currentYear = DateTime.Now.Year;
-			if (raceInfo.RaceDate.Year != currentYear)
+			if (raceInfo.RaceDate.Year != currentYear - 1)//BP Remove
 			{
 				ShowErrorMessage($"The race date for '{raceInfo.Name}' hasn't been set or is incorrect: Race Date '{raceInfo.RaceDate}'");
 				return;

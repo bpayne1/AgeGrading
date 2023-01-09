@@ -911,7 +911,7 @@ namespace AgeGrading
                         if (onlyCompletingRequirements)
                         {
                             VolunteerPoints volunteerPoints = FindVolunteerPoints(lastName, firstName);
-                            if (volunteerPoints == null || (volunteerPoints != null && volunteerPoints.TotalPoints < 5))
+                            if (volunteerPoints == null || (volunteerPoints != null && volunteerPoints.TotalPoints < 3))
                             {
 #if SHOW_MISSING
                                 if (volunteerPoints == null)
@@ -2058,7 +2058,7 @@ namespace AgeGrading
             return mVolunteerPointsList.Find(lastName, firstName);
         }
 
-        private const int kRequiredVolunteerPoints = 5;
+        private const int kRequiredVolunteerPoints = 3;
         private VolunteerPointsList mVolunteerPointsList;
         public void ClearVolunteerPoints()
         {
