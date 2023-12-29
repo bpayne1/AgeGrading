@@ -140,7 +140,7 @@ namespace AgeGrading
         internal static DateTime GetDefaultRaceDate()
         {
             BuildRaceInfo();
-            if (mRaces == null || mRaces.Count <= 0) return DateTime.Parse("1/1/2022");
+            if (mRaces == null || mRaces.Count <= 0) return DateTime.Parse("1/1/2023");
             foreach (RaceInfo item in mRaces)
             {
                 if (item == null) continue;
@@ -149,7 +149,7 @@ namespace AgeGrading
                     return item.RaceDate;
                 }
             }
-            return DateTime.Parse("1/1/2022");
+            return DateTime.Parse("1/1/2023");
         }
 
         internal static RaceInfo FindRace(string race)
@@ -165,7 +165,7 @@ namespace AgeGrading
             return null;
         }
 
-        public static string UNKNOWNDATE = "1/1/2022";
+        public static string UNKNOWNDATE = "1/1/2023";
         public static int _currentYear = 0;
         public static int _nextYear = 0;
         private const string kDefaultRaceName = "New Year's Day Wake Up 5K";
@@ -181,51 +181,51 @@ namespace AgeGrading
             }
             mRaces = new List<RaceInfo>();
             RaceInfo raceInfo = null;
-            raceInfo = new RaceInfo(kDefaultRaceName, 5.0000000, 0.0, DateTime.Parse("01/01/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("War Party 10K", 10.0000000, 0.0, DateTime.Parse("02/19/22")); mRaces.Add(raceInfo);
-            //raceInfo = new RaceInfo("Just For Fun 5K", 5.0000000, 0.0, DateTime.Parse("05/28/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo(kDefaultRaceName, 5.0000000, 0.0, DateTime.Parse("01/01/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("War Party 10K", 10.0000000, 0.0, DateTime.Parse("02/19/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Bat 5 Miler", 8.0467200, 5.0, DateTime.Parse("09/30/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Restore Your Sole 5K", 5.0000000, 0.0, DateTime.Parse("5/1/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Virginia Creeper 10 Miler", 16.0934400, 10.0, DateTime.Parse("05/28/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Virginia Creeper 10 Miler", 16.0934400, 10.0, DateTime.Parse("05/28/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Mendota 5K River Run", 5.0000000, 0.0, DateTime.Parse("03/11/21")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("5K Run for St Anne School", 5.0000000, 0.0, DateTime.Parse("05/13/21")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Chasing Snakes 10K", 10.0000000, 0.0, DateTime.Parse("03/18/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Laurel Run Ascent", 17.7027840, 11.0, DateTime.Parse("9/17/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Run the Tunnel", 6.1155072, 3.8, DateTime.Parse("04/30/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Duck Island Spring Mile", 1.6093440, 1.0, DateTime.Parse("5/10/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Amis Mill 10K", 10.0000000, 0.0, DateTime.Parse("06/25/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Laurel Run Ascent", 17.7027840, 11.0, DateTime.Parse("9/17/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Run the Tunnel", 6.1155072, 3.8, DateTime.Parse("04/30/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Duck Island Spring Mile", 1.6093440, 1.0, DateTime.Parse("5/10/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Amis Mill 10K", 10.0000000, 0.0, DateTime.Parse("06/25/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Justin Foundation 5K", 5.0000000, 0.0, DateTime.Parse("5/21/21")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("CASA 8K", 8.0000000, 0.0, DateTime.Parse("6/4/21")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Phipps Bend River Run", 0.0, 10.0, DateTime.Parse("10/12/21")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Mountain States Rehab 5K", 5.0000000, 0.0, DateTime.Parse("06/17/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Varmint Half Marathon", 21.0824064, 13.1, DateTime.Parse("06/11/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Varmint Half Marathon", 21.0824064, 13.1, DateTime.Parse("06/11/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Crooked River Half Marathon", 21.0824064, 13.1, DateTime.Parse("10/15/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Rhododendron 10K", 10.0000000, 0.0, DateTime.Parse("06/18/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Rhododendron 10K", 10.0000000, 0.0, DateTime.Parse("06/18/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Firecracker 4 miler", 6.4373760, 4.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Red, White & Boom 4 Miler", 6.4373760, 4.0, DateTime.Parse("7/2/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Crazy 8s 8K", 8.0000000, 0.0, DateTime.Parse("07/16/22")); mRaces.Add(raceInfo);
-            //raceInfo = new RaceInfo("Wolf Run 7 Miler", 11.2654080, 7.0, DateTime.Parse("7/16/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Railroad Days 5K", 5.0000000, 0.0, DateTime.Parse("8/07/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Duck Island Summer Mile", 1.6093440, 1.0, DateTime.Parse("8/16/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Red, White & Boom 4 Miler", 6.4373760, 4.0, DateTime.Parse("7/2/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Crazy 8s 8K", 8.0000000, 0.0, DateTime.Parse("07/15/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Wolf Run 7 Miler", 11.2654080, 7.0, DateTime.Parse("7/18/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Railroad Days 5K", 5.0000000, 0.0, DateTime.Parse("8/07/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Duck Island Summer Mile", 1.6093440, 1.0, DateTime.Parse("8/16/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Schoolhouse 5K", 5.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Christopher Todd Richardson Memorial 10k", 10.0000000, 0.0, DateTime.Parse(UNKNOWNDATE)); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Greene County YMCA 5K", 5.0000000, 0.0, DateTime.Parse("8/17/21")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Eastman 10K", 10.0000000, 0.0, DateTime.Parse("9/9/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Baileyton Celebration 5K", 5.0000000, 0.0, DateTime.Parse("9/11/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Bays Mountain Trail Race", 24.1401600, 15.0, DateTime.Parse("9/14/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Baileyton Celebration 5K", 5.0000000, 0.0, DateTime.Parse("9/11/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Bays Mountain Trail Race", 24.1401600, 15.0, DateTime.Parse("9/14/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Rhythm & Roots 5K", 5.0000000, 0.0, DateTime.Parse("9/11/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Apple Festival 4 Miler", 6.4373760, 4.0, DateTime.Parse("10/02/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Duck Island Fall Mile", 1.6093440, 1.0, DateTime.Parse("10/11/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("NCH Heart-One Cardiac Rehab 5K Run", 5.0000000, 0.0, DateTime.Parse("10/08/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Run Fur Their Lives 5K", 5.0000000, 0.0, DateTime.Parse("10/02/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Apple Festival 4 Miler", 6.4373760, 4.0, DateTime.Parse("10/02/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Duck Island Fall Mile", 1.6093440, 1.0, DateTime.Parse("10/11/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("NCH Heart-One Cardiac Rehab 5K Run", 5.0000000, 0.0, DateTime.Parse("10/08/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Run Fur Their Lives 5K", 5.0000000, 0.0, DateTime.Parse("10/02/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Run Fur Their Lives 10K", 10.0000000, 0.0, DateTime.Parse("10/06/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Surgoinsville 10 Miler", 16.0934400, 10.0, DateTime.Parse("10/16/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Haunted Half Marathon", 21.0824064, 13.1, DateTime.Parse("10/30/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Roan Mountain 10K", 10.0000000, 0.0, DateTime.Parse("11/06/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Surgoinsville 10 Miler", 16.0934400, 10.0, DateTime.Parse("10/16/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Haunted Half Marathon", 21.0824064, 13.1, DateTime.Parse("10/30/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Race for the Birthplace 6 Miler", 0.0000000, 6.0, DateTime.Parse("11/04/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Tri-Cities Race for the Cure 5K", 5.0000000, 0.0, DateTime.Parse("10/13/21")); mRaces.Add(raceInfo);
-            //raceInfo = new RaceInfo("BAE Veterans Day Classic Half Marathon", 21.0824064, 13.1, DateTime.Parse("11/9/21")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Surgoinsville Half Marathon", 21.0824064, 13.1, DateTime.Parse("10/14/23")); mRaces.Add(raceInfo);
             //raceInfo = new RaceInfo("Santa Special Open Mile", 1.6093440, 1.0, DateTime.Parse("11/19/21")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Johnson City Turkey Trot 5K (Up & At 'Em)", 5.0000000, 0.0, DateTime.Parse("11/25/22")); mRaces.Add(raceInfo);
-            raceInfo = new RaceInfo("Pioneer 5 Miler", 8.0467200, 5.0, DateTime.Parse("12/18/22")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Johnson City Turkey Trot 5K (Up & At 'Em)", 5.0000000, 0.0, DateTime.Parse("11/25/23")); mRaces.Add(raceInfo);
+            raceInfo = new RaceInfo("Pioneer 5 Miler", 8.0467200, 5.0, DateTime.Parse("12/16/23")); mRaces.Add(raceInfo);
             mRaces.Sort(new RaceInfoComparer());
             double totalKilometers = 0;
             double totalMiles = 0;
