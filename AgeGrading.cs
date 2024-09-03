@@ -41,7 +41,7 @@ namespace AgeGrading
 			RaceInfo.BuildRaceInfo();
 		}
 
-		 public const string kYear = "2023";
+		 public const string kYear = "2024";
 		 private static int mYear;
 		 public static int Year
 		 {
@@ -886,7 +886,7 @@ internal static string GetFolderPath()
 				return;
 			}
 			int currentYear = DateTime.Now.Year;
-			if (raceInfo.RaceDate.Year != currentYear - 1)//BP Remove
+			if (raceInfo.RaceDate.Year != currentYear)
 			{
 				ShowErrorMessage($"The race date for '{raceInfo.Name}' hasn't been set or is incorrect: Race Date '{raceInfo.RaceDate}'");
 				return;
